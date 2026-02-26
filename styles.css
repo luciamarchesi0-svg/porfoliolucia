@@ -417,46 +417,54 @@ img{ max-width: 100%; display:block; }
   align-self: flex-start; /* aligns with other buttons */
 }
 
-/* ===== Practice section (homepage) ===== */
-.practice-section{
-  padding: 120px 0;
-  border-top: 1px solid rgba(30,30,30,.10);
-  margin-top: 80px;
-}
-
 .practice-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
   align-items: start;
 }
 
-.practice-title{
-  margin: 0;
-  font-family: var(--font-title);
+.practice-card{
+  display:block;
+  text-decoration:none;
+  color: inherit;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow:hidden;
+  background: rgba(255,255,255,.55);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.practice-card:visited{ color: inherit; }
+
+.practice-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px rgba(0,0,0,.10);
+  border-color: rgba(30,30,30,.28);
+}
+
+.practice-img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display:block;
+  background: rgba(30,30,30,.06);
+}
+
+.practice-name{
+  margin: 12px 14px 14px;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: clamp(40px, 5vw, 56px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: 14px;
   color: var(--ink);
+  opacity: .92;
 }
 
-.practice-subtitle{
-  margin: 0 0 24px 0;
-  font-size: 20px;
-  line-height: 1.5;
-  color: var(--ink);
-  font-weight: 400;
+@media (max-width: 900px){
+  .practice-grid{ grid-template-columns: 1fr; }
 }
-
-.practice-desc{
-  margin: 0 0 40px 0;
-  font-size: 16px;
-  line-height: 1.6;
-  color: rgba(30,30,30,.65);
-}
-
-.practice-divider{ height: 1px; background: var(--line); }
 
 /* ===== Practice details page (practice.html) ===== */
 .practice-hero{ padding: 120px 0; }
@@ -919,3 +927,4 @@ img{ max-width: 100%; display:block; }
   .practice-grid{ grid-template-columns: 1fr; }
   .practice-media{ aspect-ratio: 16 / 10; }
 }
+
