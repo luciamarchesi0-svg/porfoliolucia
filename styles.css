@@ -974,27 +974,6 @@ img{ max-width: 100%; display:block; }
     align-items: start;
   }
 }
-@media (max-width: 900px){
-
-  .hero__grid--bg{
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .hero__right{
-    order: 2;
-    justify-content: center;
-  }
-
-  .hero__portrait{
-  width: 100%;
-  height: auto;
-  border-radius: 24px;
-}
-  }
-
-}
-
 
 
 
