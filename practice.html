@@ -12,30 +12,49 @@
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="brand__mark">LMZ</span>
-      </a>
+<!-- HEADER -->
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="brand__mark">LMZ</span>
+    </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a class="nav__link" href="index.html#work">Work</a>
-        <a class="nav__link is-active" href="practice.html">Practice</a>
-        <a class="nav__link" href="index.html#about">About</a>
-        <a class="nav__link" href="contact.html">Contact</a>
-      </nav>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html#work">Work</a>
+      <a class="nav__link is-active" href="practice.html">Practice</a>
+      <a class="nav__link" href="index.html#about">About</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
 
+    <div class="header__right">
       <div class="lang" aria-label="Language toggle">
         <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
         <span class="lang__sep">|</span>
         <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
       </div>
-    </div>
-    <div class="header__rule" aria-hidden="true"></div>
-  </header>
 
-  <main id="top">
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu panel OUTSIDE header__inner -->
+  <div id="mobileMenu" class="mobileMenu" hidden>
+    <nav class="mobileMenu__nav" aria-label="Mobile">
+      <a class="mobileMenu__link" href="index.html#work">Work</a>
+      <a class="mobileMenu__link" href="practice.html">Practice</a>
+      <a class="mobileMenu__link" href="index.html#about">About</a>
+      <a class="mobileMenu__link" href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <div class="header__rule" aria-hidden="true"></div>
+</header>
+
+<main id="top">
     <!-- HERO PRACTICE -->
     <section class="section practice-hero">
       <div class="container practice-grid">
