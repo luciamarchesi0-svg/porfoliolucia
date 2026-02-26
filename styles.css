@@ -792,6 +792,15 @@ img{ max-width: 100%; display:block; }
     max-width: 520px;
   }
 }
+.aboutContent{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.aboutBtn{
+  align-self: flex-start;
+}
 /* ===== Footer & help ===== */
 .footer{
   padding: 28px 0 34px;
@@ -925,5 +934,6 @@ img{ max-width: 100%; display:block; }
   .contactPage__desc{ max-width: 60ch; }
 
 }
+
 
 
