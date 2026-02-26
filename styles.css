@@ -670,7 +670,7 @@ img{ max-width: 100%; display:block; }
   overflow: hidden;
   background: rgba(30,30,30,.05);
   border: 1px solid rgba(30,30,30,.10);
-  aspect-ratio: 16 / 5;
+  aspect-ratio: 16 / 8;
 }
 
 .practice-detail__img{
