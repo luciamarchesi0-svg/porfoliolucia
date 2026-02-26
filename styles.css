@@ -938,6 +938,43 @@ img{ max-width: 100%; display:block; }
   .contactPage__desc{ max-width: 60ch; }
 
 }
+/* ===== ABOUT refined layout (force) ===== */
+.aboutGrid{
+  margin-top: 36px;
+  display: grid !important;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.aboutImage img{
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(30,30,30,.10);
+  background: rgba(30,30,30,.05);
+}
+
+.aboutContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 520px;
+}
+
+.aboutBtn{ margin-top: 32px; }
+
+@media (max-width: 900px){
+  .aboutGrid{
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+}
+
 
 
 
