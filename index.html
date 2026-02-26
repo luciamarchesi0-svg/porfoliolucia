@@ -7,241 +7,215 @@
   <meta name="description" content="Lucía Marchesi Zorzi — Product Designer. Material innovation & strategic systems." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Sofia+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Sofia+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <!-- HEADER -->
- <header class="header">
-  <div class="container header__inner">
-    <a class="brand" href="#top" aria-label="Home">
-      <span class="brand__mark">LMZ</span>
-    </a>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand__mark">LMZ</span>
+      </a>
 
-    <nav class="nav" aria-label="Primary">
-      <a class="nav__link" href="#work">Work</a>
-      <a class="nav__link" href="#practice">Practice</a>
-      <a class="nav__link" href="#about">About</a>
-      <a class="nav__link" href="contact.html">Contact</a>
-    </nav>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="#work">Work</a>
+        <a class="nav__link" href="#practice">Practice</a>
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </nav>
 
-    <div class="lang" aria-label="Language toggle">
-      <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
-      <span class="lang__sep">|</span>
-      <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+      <div class="lang" aria-label="Language toggle">
+        <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
+        <span class="lang__sep">|</span>
+        <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+      </div>
     </div>
-  </div>
-  <div class="header__rule" aria-hidden="true"></div>
-</header>
+    <div class="header__rule" aria-hidden="true"></div>
+  </header>
 
   <main id="top">
-  <!-- HERO -->
-<section class="hero hero--bg" id="top" style="--hero-bg: url('images/about-me/LU-CON%20FONDO.jpg');">
+    <!-- HERO -->
+    <section class="hero hero--bg" style="--hero-bg: url('images/about-me/LU-CON%20FONDO.jpg');">
+      <div class="container hero__grid hero__grid--bg">
+        <div class="hero__left">
+          <h1 class="hero__title">
+            <span data-i18n="name_line1">Lucía</span><br />
+            <span data-i18n="name_line2">Marchesi Zorzi</span>
+          </h1>
 
-  <div class="container hero__grid hero__grid--bg">
-    <div class="hero__left">
-      <h1 class="hero__title">
-        <span data-i18n="name_line1">Lucía</span><br />
-        <span data-i18n="name_line2">Marchesi Zorzi</span>
-      </h1>
+          <p class="hero__role" data-i18n="role">Product Designer</p>
+          <p class="hero__tagline" data-i18n="tagline">
+            MATERIAL INNOVATION &amp; STRATEGIC SYSTEMS
+          </p>
 
-      <p class="hero__role" data-i18n="role">Product Designer</p>
-      <p class="hero__tagline" data-i18n="tagline">
-        MATERIAL INNOVATION &amp; STRATEGIC SYSTEMS
-      </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#work">
+              <span class="btn__arrow">→</span>
+              <span data-i18n="cta_work">View Work</span>
+            </a>
+            <a class="btn btn--ghost" href="contact.html">
+              <span class="btn__arrow">→</span>
+              <span data-i18n="cta_contact">Contact</span>
+            </a>
+          </div>
 
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#work">
-          <span class="btn__arrow">→</span>
-          <span data-i18n="cta_work">View Work</span>
-        </a>
-        <a class="btn btn--ghost" href="contact.html">
-          <span class="btn__arrow">→</span>
-          <span data-i18n="cta_contact">Contact</span>
-        </a>
+          <div class="hero__based">
+            <span class="hero__based-line" aria-hidden="true"></span>
+            <span class="hero__based-text">BASED IN MADRID</span>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <div class="hero__image-placeholder">
+            <img class="hero__portrait" src="images/about-me/LU-SIN%20FONDO.png" alt="Lucía Marchesi Zorzi" decoding="async">
+          </div>
+        </div>
       </div>
-
-      <div class="hero__based">
-        <span class="hero__based-line" aria-hidden="true"></span>
-        <span class="hero__based-text">BASED IN MADRID</span>
-      </div>
-    </div>
-
-    <div class="hero__right">
-      <div class="hero__image-placeholder">
-        <img class="hero__portrait" src="images/about-me/LU-SIN%20FONDO.png" alt="Lucía Marchesi Zorzi" decoding="async">
-      </div>
-    </div>
-  </div>
-
-</section>
+    </section>
 
     <!-- WORK -->
-<section id="work" class="section work">
-  <div class="container">
+    <section id="work" class="section work">
+      <div class="container">
+        <div class="work__header">
+          <h2 class="work__title">SELECTED WORK</h2>
+        </div>
 
-    <!-- Header / Intro -->
-    <div class="work__header">
-      <h2 class="work__title">SELECTED WORK</h2>
-    </div>
+        <div class="work__list">
+          <a class="projectCard" href="projects/aurora-isimar.html">
+            <div class="projectCard__media">
+              <img class="projectCard__img"
+                src="images/aurora/RENDER_DE%20PIE_APAGADA%20EN%20ESTUDIO.png"
+                alt="Aurora — lighting concept cover"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="projectCard__meta">
+              <div class="projectCard__kicker">LIGHTING · iSiMAR</div>
+              <div class="projectCard__name">Aurora</div>
+              <div class="projectCard__year">2026</div>
+            </div>
+          </a>
 
-    <!-- Projects full width -->
-  <div class="work__list">
+          <a class="projectCard" href="projects/kyrre-shift.html">
+            <div class="projectCard__media">
+              <img class="projectCard__img"
+                src="images/kyrre-shift/RENDER_APILADOS.png"
+                alt="Kyrre Shift — furniture design cover"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="projectCard__meta">
+              <div class="projectCard__kicker">FURNITURE DESIGN</div>
+              <div class="projectCard__name">Kyrre Shift</div>
+              <div class="projectCard__year">2025</div>
+            </div>
+          </a>
 
-  <a class="projectCard" href="projects/aurora-isimar.html">
-    <div class="projectCard__media">
-      <img
-        class="projectCard__img"
-        src="/images/aurora/RENDER_DE%20PIE_APAGADA%20EN%20ESTUDIO.png"
-        alt="Aurora — lighting concept cover"
-        loading="lazy"
-        decoding="async"
-      >
-    </div>
-    <div class="projectCard__meta">
-      <div class="projectCard__kicker">LIGHTING · iSiMAR</div>
-      <div class="projectCard__name">Aurora</div>
-      <div class="projectCard__year">2026</div>
-    </div>
-  </a>
+          <a class="projectCard" href="projects/safestep.html">
+            <div class="projectCard__media">
+              <img class="projectCard__img"
+                src="images/safestep/NASA%2056.180.png"
+                alt="SafeStep — safety product cover"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="projectCard__meta">
+              <div class="projectCard__kicker">SAFETY PRODUCT</div>
+              <div class="projectCard__name">SafeStep</div>
+              <div class="projectCard__year">2023</div>
+            </div>
+          </a>
 
-  <a class="projectCard" href="projects/kyrre-shift.html">
-    <div class="projectCard__media">
-      <img
-        class="projectCard__img"
-        src="images/kyrre-shift/RENDER_APILADOS.png"
-        alt="Kyrre Shift — furniture design cover"
-        loading="lazy"
-        decoding="async"
-      >
-    </div>
-    <div class="projectCard__meta">
-      <div class="projectCard__kicker">FURNITURE DESIGN</div>
-      <div class="projectCard__name">Kyrre Shift</div>
-      <div class="projectCard__year">2025</div>
-    </div>
-  </a>
+          <a class="projectCard" href="projects/candela.html">
+            <div class="projectCard__media">
+              <div class="projectCard__placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="projectCard__meta">
+              <div class="projectCard__kicker">LIGHTING CONCEPT · esPattio</div>
+              <div class="projectCard__name">Candela</div>
+              <div class="projectCard__year">2026</div>
+            </div>
+          </a>
 
-  <a class="projectCard" href="projects/safestep.html">
-    <div class="projectCard__media">
-      <img
-        class="projectCard__img"
-        src="images/safestep/NASA%2056.180.png"
-        alt="SafeStep — safety product cover"
-        loading="lazy"
-        decoding="async"
-      >
-    </div>
-    <div class="projectCard__meta">
-      <div class="projectCard__kicker">SAFETY PRODUCT</div>
-      <div class="projectCard__name">SafeStep</div>
-      <div class="projectCard__year">2023</div>
-    </div>
-  </a>
+          <a class="projectCard" href="projects/v-pin.html">
+            <div class="projectCard__media">
+              <div class="projectCard__placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="projectCard__meta">
+              <div class="projectCard__kicker">MASTER THESIS · PRODUCT SYSTEM</div>
+              <div class="projectCard__name">V-Pin</div>
+              <div class="projectCard__year">2025</div>
+            </div>
+          </a>
 
-  <a class="projectCard" href="projects/candela.html">
-    <div class="projectCard__media">
-      <div class="projectCard__placeholder" aria-hidden="true"></div>
-    </div>
-    <div class="projectCard__meta">
-      <div class="projectCard__kicker">LIGHTING CONCEPT · esPattio</div>
-      <div class="projectCard__name">Candela</div>
-      <div class="projectCard__year">2026</div>
-    </div>
-  </a>
-
-  <a class="projectCard" href="projects/v-pin.html">
-    <div class="projectCard__media">
-      <div class="projectCard__placeholder" aria-hidden="true"></div>
-    </div>
-    <div class="projectCard__meta">
-      <div class="projectCard__kicker">MASTER THESIS · PRODUCT SYSTEM</div>
-      <div class="projectCard__name">V-Pin</div>
-      <div class="projectCard__year">2025</div>
-    </div>
-  </a>
-
-  <a class="projectCard" href="projects/holdup.html">
-    <div class="projectCard__media">
-      <img
-        class="projectCard__img"
-        src="images/holdup/FOTOMONTAJE_BA%C3%91O.png"
-        alt="HoldUp — non-invasive safety system cover"
-        loading="lazy"
-        decoding="async"
-      >
-    </div>
-    <div class="projectCard__meta">
-      <div class="projectCard__kicker">NON-INVASIVE SAFETY SYSTEM</div>
-      <div class="projectCard__name">HoldUp</div>
-      <div class="projectCard__year">2025</div>
-    </div>
-  </a>
-
-</div>
-
-    <!-- PRACTICE -->
-  <section id="practice" class="practice-hero">
-  <div class="practice-head">
-    <h1 class="practice-title">Material &amp; Craft<br>Practice</h1>
-  </div>
-
-  <div class="practice-grid" aria-label="Practice highlights">
-    <a class="practice-card" href="practice.html">
-      <figure class="practice-media">
-        <img src="assets/practice-01.jpg" alt="Practice image 1">
-      </figure>
-      <div class="practice-meta">
-        <p class="practice-name">Goldsmithing</p>
+          <a class="projectCard" href="projects/holdup.html">
+            <div class="projectCard__media">
+              <img class="projectCard__img"
+                src="images/holdup/FOTOMONTAJE_BA%C3%91O.png"
+                alt="HoldUp — non-invasive safety system cover"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="projectCard__meta">
+              <div class="projectCard__kicker">NON-INVASIVE SAFETY SYSTEM</div>
+              <div class="projectCard__name">HoldUp</div>
+              <div class="projectCard__year">2025</div>
+            </div>
+          </a>
+        </div>
       </div>
-    </a>
+    </section>
 
-    <a class="practice-card" href="practice.html">
-      <figure class="practice-media">
-        <img src="assets/practice-02.jpg" alt="Practice image 2">
-      </figure>
-      <div class="practice-meta">
-        <p class="practice-name">Composites</p>
+    <!-- PRACTICE (3 columns) -->
+    <section id="practice" class="section practice">
+      <div class="container">
+        <h2 class="practice__title">Material &amp; Craft<br>Practice</h2>
+
+        <div class="practice-grid" aria-label="Practice highlights">
+          <a class="practice-card" href="practice.html">
+            <figure class="practice-media">
+              <img src="images/practice/practice-01.jpg" alt="Goldsmithing" loading="lazy" decoding="async">
+            </figure>
+            <p class="practice-name">Goldsmithing</p>
+          </a>
+
+          <a class="practice-card" href="practice.html">
+            <figure class="practice-media">
+              <img src="images/practice/practice-02.jpg" alt="Composites" loading="lazy" decoding="async">
+            </figure>
+            <p class="practice-name">Composites</p>
+          </a>
+
+          <a class="practice-card" href="practice.html">
+            <figure class="practice-media">
+              <img src="images/practice/practice-03.jpg" alt="3D Printing" loading="lazy" decoding="async">
+            </figure>
+            <p class="practice-name">3D Printing</p>
+          </a>
+        </div>
       </div>
-    </a>
+    </section>
 
-    <a class="practice-card" href="practice.html">
-      <figure class="practice-media">
-        <img src="assets/practice-03.jpg" alt="Practice image 3">
-      </figure>
-      <div class="practice-meta">
-        <p class="practice-name">3D Printing</p>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section__title" data-i18n="about_title">ABOUT</h2>
+
+        <div class="aboutGrid">
+          <div class="aboutImage">
+            <img src="images/about-me/LU-CON%20FONDO.jpg" alt="Lucía Marchesi portrait">
+          </div>
+
+          <div class="aboutContent">
+            <p class="section__desc aboutText" data-i18n="about_desc">
+              I’m a product designer focused on material innovation and strategic systems, bridging craft, engineering and narrative.
+            </p>
+
+            <a href="about.html" class="btn btn--ghost aboutBtn" data-i18n="about_btn">
+              More about me <span class="btn__arrow">→</span>
+            </a>
+          </div>
+        </div>
       </div>
-    </a>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <h2 class="section__title" data-i18n="about_title">ABOUT</h2>
-
-    <div class="aboutGrid">
-      <div class="aboutImage">
-        <img src="./images/about-me/LU-CON%20FONDO.jpg" alt="Lucía Marchesi portrait">
-      </div>
-
-      <div class="aboutContent">
-        <p class="section__desc aboutText" data-i18n="about_desc">
-          I’m a product designer focused on material innovation and strategic systems, bridging craft, engineering and narrative.
-        </p>
-
-        <a href="./about.html" class="btn btn--ghost aboutBtn" data-i18n="about_btn">
-          More about me <span class="btn__arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  </div>
-</section>
+    </section>
   </main>
 
   <footer class="footer">
@@ -255,21 +229,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
