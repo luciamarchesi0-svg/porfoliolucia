@@ -987,11 +987,14 @@ img{ max-width: 100%; display:block; }
   }
 
   .hero__portrait{
-    width: 100%;
-    max-width: 420px;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
   }
 
 }
+
 
 
 
