@@ -334,4 +334,6 @@ img{ display:block; max-width:100%; }
   .practice-grid{ grid-template-columns:1fr; }
   .aboutGrid{ grid-template-columns:1fr; }
   .hero__grid{ grid-template-columns:1fr; }
+}ns:1fr; }
 }
+
