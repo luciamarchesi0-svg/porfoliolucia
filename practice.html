@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Material & Craft Practice — Lucía Marchesi Zorzi</title>
+  <meta name="description" content="Material & Craft Practice by Lucía Marchesi Zorzi." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Sofia+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand__mark">LMZ</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="index.html#work">Work</a>
+        <a class="nav__link is-active" href="practice.html">Practice</a>
+        <a class="nav__link" href="index.html#about">About</a>
+        <a class="nav__link" href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="lang" aria-label="Language toggle">
+        <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
+        <span class="lang__sep">|</span>
+        <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+      </div>
+    </div>
+    <div class="header__rule" aria-hidden="true"></div>
+  </header>
+
+  <main id="top">
+    <!-- HERO PRACTICE -->
+    <section class="section practice-hero">
+      <div class="container practice-grid">
+        <div class="practice-left">
+          <h1 class="practice-title" data-i18n="practice_page_title">Material & Craft Practice</h1>
+        </div>
+        <div class="practice-right">
+          <p class="practice-subtitle" data-i18n="practice_page_subtitle">
+            Hands-on exploration of materials and processes that inform product design thinking.
+          </p>
+          <p class="practice-desc" data-i18n="practice_page_desc">
+            This ongoing practice develops intuition about material behavior, production constraints, and craft methodologies through direct experimentation with traditional and contemporary techniques.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOLDSMITHING -->
+    <section class="section practice-detail">
+      <div class="container">
+        <div class="practice-detail__header">
+          <h2 class="practice-detail__title" data-i18n="goldsmithing_title">Orfebrería</h2>
+          <span class="practice-detail__kicker" data-i18n="goldsmithing_kicker">GOLDSMITHING</span>
+        </div>
+        
+        <div class="practice-detail__media">
+          <div class="practice-detail__placeholder" aria-hidden="true"></div>
+        </div>
+        
+        <div class="practice-detail__caption">
+          <p data-i18n="goldsmithing_caption">Traditional metalworking techniques exploring form through material constraints.</p>
+        </div>
+        
+        <div class="practice-detail__divider"></div>
+      </div>
+    </section>
+
+    <!-- COMPOSITE MATERIALS -->
+    <section class="section practice-detail">
+      <div class="container">
+        <div class="practice-detail__header">
+          <h2 class="practice-detail__title" data-i18n="composites_title">Materiales Compuestos</h2>
+          <span class="practice-detail__kicker" data-i18n="composites_kicker">COMPOSITE MATERIALS</span>
+        </div>
+        
+        <div class="practice-detail__media">
+          <div class="practice-detail__placeholder" aria-hidden="true"></div>
+        </div>
+        
+        <div class="practice-detail__caption">
+          <p data-i18n="composites_caption">Experimentation with fiber reinforced composites and lamination processes.</p>
+        </div>
+        
+        <div class="practice-detail__divider"></div>
+      </div>
+    </section>
+
+    <!-- 3D PRINTING -->
+    <section class="section practice-detail">
+      <div class="container">
+        <div class="practice-detail__header">
+          <h2 class="practice-detail__title" data-i18n="3dprinting_title">Impresión 3D</h2>
+          <span class="practice-detail__kicker" data-i18n="3dprinting_kicker">3D PRINTING</span>
+        </div>
+        
+        <div class="practice-detail__media">
+          <div class="practice-detail__placeholder" aria-hidden="true"></div>
+        </div>
+        
+        <div class="practice-detail__caption">
+          <p data-i18n="3dprinting_caption">Additive manufacturing for rapid prototyping and complex geometries.</p>
+        </div>
+        
+        <div class="practice-detail__divider"></div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="section practice-conclusion">
+      <div class="container practice-grid">
+        <div class="practice-left">
+          <h2 class="practice-title" data-i18n="conclusion_title">Practice Informs Design</h2>
+        </div>
+        <div class="practice-right">
+          <p class="practice-desc" data-i18n="conclusion_desc1">
+            Working directly with materials—understanding how metal responds to force, how composites cure, how additive processes build layer by layer—creates knowledge that cannot be learned theoretically.
+          </p>
+          <p class="practice-desc" data-i18n="conclusion_desc2">
+            This tactile understanding influences design decisions at every stage, from initial concept sketches to final production specifications. It builds intuition about what is possible, what is efficient, and what compromises are worth making.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__text">© <span id="year"></span> LMZ</p>
+      <a class="footer__top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

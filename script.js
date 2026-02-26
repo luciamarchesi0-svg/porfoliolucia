@@ -40,8 +40,10 @@ const dict = {
     based_in: "BASED IN MADRID",
     selected_work: "SELECTED WORK",
     work_desc: "A curated set of projects focused on material-driven innovation, product systems and prototyping.",
-    practice_title: "PRACTICE",
-    practice_desc: "My process balances research, iteration and hands-on making: from early concepts to refined prototypes.",
+    practice_title: "Material & Craft\nPractice",
+    practice_subtitle: "Exploring the intersection of traditional craft techniques and contemporary material innovation.",
+    practice_desc: "Through hands-on experimentation with goldsmithing, composite materials, and 3D printing, this practice develops a deeper understanding of material behavior, production constraints, and craft methodologies that inform product design work.",
+    cta_practice: "Explore Practice",
     about_title: "ABOUT",
     about_desc: "I’m a product designer focused on material innovation and strategic systems, bridging craft, engineering and narrative.",
     contact_title: "CONTACT",
@@ -64,8 +66,10 @@ const dict = {
     based_in: "BASADA EN MADRID",
     selected_work: "TRABAJOS SELECCIONADOS",
     work_desc: "Una selección de proyectos centrados en innovación material, sistemas de producto y prototipado.",
-    practice_title: "PRÁCTICA",
-    practice_desc: "Mi proceso combina investigación, iteración y hacer con las manos: de conceptos iniciales a prototipos refinados.",
+    practice_title: "Práctica de Materiales\ny Oficios",
+    practice_subtitle: "Explorando la intersección entre técnicas artesanales tradicionales y la innovación material contemporánea.",
+    practice_desc: "A través de la experimentación práctica con orfebrería, materiales compuestos e impresión 3D, esta práctica desarrolla una comprensión más profunda del comportamiento de los materiales, las limitaciones de producción y las metodologías artesanales que informan el trabajo de diseño de producto.",
+    cta_practice: "Explorar Práctica",
     about_title: "SOBRE MÍ",
     about_desc: "Soy diseñadora de producto enfocada en innovación material y sistemas estratégicos, conectando oficio, ingeniería y narrativa.",
     contact_title: "CONTACTO",
@@ -84,7 +88,10 @@ function applyLang(lang){
 
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.dataset.i18n;
-    if (dict[lang] && dict[lang][key]) el.textContent = dict[lang][key];
+    if (dict[lang] && dict[lang][key]) {
+      // Handle newlines in translations
+      el.innerHTML = dict[lang][key].replace(/\n/g, '<br>');
+    }
   });
 
   document.querySelectorAll("[data-lang-btn]").forEach(btn => {
@@ -98,3 +105,23 @@ document.querySelectorAll("[data-lang-btn]").forEach(btn => {
 
 // default
 applyLang("en");
+
+// ====== Scroll Reveal Animation ======
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.projectCard').forEach(card => {
+  observer.observe(card);
+});

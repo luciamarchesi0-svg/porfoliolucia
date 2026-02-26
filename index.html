@@ -39,16 +39,11 @@
   <!-- HERO -->
 <section class="hero hero--bg">
 
-  <!-- Fondo animado -->
-  <div class="hero__bg" aria-hidden="true"></div>
-  <div class="hero__veil" aria-hidden="true"></div>
-
   <div class="container hero__grid hero__grid--bg">
     <div class="hero__left">
       <h1 class="hero__title">
         <span data-i18n="name_line1">Lucía</span><br />
-        <span data-i18n="name_line2">Marchesi</span><br />
-        <span data-i18n="name_line3">Zorzi</span>
+        <span data-i18n="name_line2">Marchesi Zorzi</span>
       </h1>
 
       <p class="hero__role" data-i18n="role">Product Designer</p>
@@ -66,6 +61,21 @@
           <span data-i18n="cta_contact">Contact</span>
         </a>
       </div>
+
+      <div class="hero__based">
+        <span class="hero__based-line" aria-hidden="true"></span>
+        <span class="hero__based-text">BASED IN MADRID</span>
+      </div>
+    </div>
+
+    <div class="hero__right">
+      <div class="hero__image-placeholder">
+        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <polyline points="21 15 16 10 5 21"></polyline>
+        </svg>
+      </div>
     </div>
   </div>
 
@@ -77,11 +87,6 @@
 
     <!-- Header / Intro -->
     <div class="work__header">
-      <div class="work__based">
-        <span class="work__line" aria-hidden="true"></span>
-        <span class="work__basedText">BASED IN MADRID</span>
-      </div>
-
       <h2 class="work__title">SELECTED WORK</h2>
     </div>
 
@@ -157,12 +162,23 @@
 </div>
 
     <!-- PRACTICE -->
-    <section id="practice" class="section">
-      <div class="container twoCol">
-        <h2 class="section__title" data-i18n="practice_title">PRACTICE</h2>
-        <p class="section__desc" data-i18n="practice_desc">
-          My process balances research, iteration and hands-on making: from early concepts to refined prototypes.
-        </p>
+    <section id="practice" class="section practice-section">
+      <div class="container practice-grid">
+        <div class="practice-left">
+          <h2 class="practice-title" data-i18n="practice_title">Material & Craft<br>Practice</h2>
+        </div>
+        <div class="practice-right">
+          <p class="practice-subtitle" data-i18n="practice_subtitle">
+            Exploring the intersection of traditional craft techniques and contemporary material innovation.
+          </p>
+          <p class="practice-desc" data-i18n="practice_desc">
+            Through hands-on experimentation with goldsmithing, composite materials, and 3D printing, this practice develops a deeper understanding of material behavior, production constraints, and craft methodologies that inform product design work.
+          </p>
+          <a class="btn btn--ghost practice-btn" href="#practice-details">
+            <span data-i18n="cta_practice">Explore Practice</span>
+            <span class="btn__arrow">→</span>
+          </a>
+        </div>
       </div>
     </section>
 
