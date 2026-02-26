@@ -756,7 +756,42 @@ img{ max-width: 100%; display:block; }
     gap: 40px;
   }
 }
+/* ===== ABOUT (title like other sections + 2 columns under it) ===== */
+.aboutGrid{
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 28px 64px;
+  align-items: start;
+}
 
+.aboutImage img{
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(30,30,30,.10);
+  background: rgba(30,30,30,.05);
+}
+
+.aboutText{
+  margin: 0;
+  max-width: 52ch;
+  color: rgba(30,30,30,.78);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px){
+  .aboutGrid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .aboutImage img{
+    max-width: 520px;
+  }
+}
 /* ===== Footer & help ===== */
 .footer{
   padding: 28px 0 34px;
@@ -890,4 +925,5 @@ img{ max-width: 100%; display:block; }
   .contactPage__desc{ max-width: 60ch; }
 
 }
+
 
