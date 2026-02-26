@@ -994,6 +994,59 @@ img{ max-width: 100%; display:block; }
   }
 
 }
+/* ===== HERO mobile: photo big + background full width ===== */
+@media (max-width: 900px){
+
+  .hero--bg{
+    padding: 88px 0 72px;
+    background: none;                 /* apaga el split desktop */
+  }
+
+  /* Fondo full width detrás (suave) */
+  .hero--bg::before{
+    content:"";
+    position:absolute;
+    inset: 0;
+    background-image: var(--hero-bg);
+    background-size: cover;
+    background-position: center;
+    opacity: .12;                      /* sutil, elegante */
+    filter: blur(2px) saturate(.95);
+    transform: scale(1.03);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Asegura que el contenido quede por arriba del fondo */
+  .hero__grid--bg{
+    position: relative;
+    z-index: 2;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Texto arriba */
+  .hero__left{ order: 1; }
+
+  /* Foto grande abajo */
+  .hero__right{
+    order: 2;
+    justify-content: flex-start;
+  }
+
+  .hero__portrait{
+    width: 100% !important;           /* rompe el “apenas agrandó” */
+    max-width: none !important;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 44px rgba(0,0,0,.10);
+  }
+
+  /* Si querés todavía más grande (casi full-bleed dentro del container) */
+  .hero__right{
+    margin-top: 10px;
+  }
+}
 
 
 
