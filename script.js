@@ -1,30 +1,34 @@
 // ====== Year ======
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ====== Active nav link on scroll ======
+// ====== Active nav link on scroll (index only) ======
 const sections = ["work", "practice", "about", "contact"]
   .map(id => document.getElementById(id))
   .filter(Boolean);
 
 const navLinks = Array.from(document.querySelectorAll(".nav__link"));
+const hasHashNav = navLinks.some(a => (a.getAttribute("href") || "").startsWith("#"));
 
-const setActive = () => {
-  const y = window.scrollY + 120;
-  let current = null;
+if (sections.length > 0 && hasHashNav) {
+  const setActive = () => {
+    const y = window.scrollY + 120;
+    let current = null;
 
-  for (const sec of sections) {
-    const top = sec.offsetTop;
-    const bottom = top + sec.offsetHeight;
-    if (y >= top && y < bottom) current = sec.id;
-  }
+    for (const sec of sections) {
+      const top = sec.offsetTop;
+      const bottom = top + sec.offsetHeight;
+      if (y >= top && y < bottom) current = sec.id;
+    }
 
-  navLinks.forEach(a => {
-    a.classList.toggle("is-active", current && a.getAttribute("href") === `#${current}`);
-  });
-};
+    navLinks.forEach(a => {
+      a.classList.toggle("is-active", current && a.getAttribute("href") === `#${current}`);
+    });
+  };
 
-window.addEventListener("scroll", setActive, { passive: true });
-setActive();
+  window.addEventListener("scroll", setActive, { passive: true });
+  setActive();
+}
 
 // ====== Simple i18n (EN/ES) ======
 const dict = {
@@ -65,6 +69,12 @@ const dict = {
     contact_desc: "For collaborations, internships or freelance work, reach out.",
     contact_email: "Email me",
     contact_linkedin: "LinkedIn",
+    contact_page_title: "Open to new\nprojects",
+    contact_page_desc: "Currently available for product design projects, material research collaborations, and strategic design work.",
+    contact_page_location: "MADRID, SPAIN",
+    contact_page_email_label: "Email",
+    contact_page_linkedin_label: "LinkedIn",
+    contact_page_instagram_label: "Instagram",
     name_line1: "Lucía",
     name_line2: "Marchesi",
     name_line3: "Zorzi"
@@ -106,6 +116,12 @@ const dict = {
     contact_desc: "Para colaboraciones, prácticas o proyectos freelance, escribime.",
     contact_email: "Escribime",
     contact_linkedin: "LinkedIn",
+    contact_page_title: "Abierta a nuevos\nproyectos",
+    contact_page_desc: "Actualmente disponible para proyectos de diseño de producto, colaboraciones de investigación en materiales y trabajo de diseño estratégico.",
+    contact_page_location: "MADRID, ESPAÑA",
+    contact_page_email_label: "Email",
+    contact_page_linkedin_label: "LinkedIn",
+    contact_page_instagram_label: "Instagram",
     name_line1: "Lucía",
     name_line2: "Marchesi",
     name_line3: "Zorzi"

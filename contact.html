@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Lucía Marchesi Zorzi</title>
+  <meta name="description" content="Get in touch with Lucía Marchesi Zorzi." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Sofia+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand__mark">LMZ</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="index.html#work">Work</a>
+        <a class="nav__link" href="practice.html">Practice</a>
+        <a class="nav__link" href="index.html#about">About</a>
+        <a class="nav__link is-active" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="lang" aria-label="Language toggle">
+        <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
+        <span class="lang__sep">|</span>
+        <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+      </div>
+    </div>
+    <div class="header__rule" aria-hidden="true"></div>
+  </header>
+
+  <main id="top">
+    <section class="section contactPage">
+      <div class="container contactPage__grid">
+        <div class="contactPage__left">
+          <h1 class="contactPage__title" data-i18n="contact_page_title">Open to new<br>projects</h1>
+          <p class="contactPage__desc" data-i18n="contact_page_desc">
+            Currently available for product design projects, material research collaborations, and strategic design work.
+          </p>
+
+          <div class="contactPage__location">
+            <span class="contactPage__location-line" aria-hidden="true"></span>
+            <span class="contactPage__location-text" data-i18n="contact_page_location">MADRID, SPAIN</span>
+          </div>
+        </div>
+
+        <div class="contactPage__right">
+          <dl class="contactPage__list">
+            <div class="contactPage__item">
+              <dt class="contactPage__label" data-i18n="contact_page_email_label">Email</dt>
+              <dd class="contactPage__value">
+                <a class="contactPage__link" href="mailto:luciamarchesi@email.com">luciamarchesi@email.com</a>
+              </dd>
+            </div>
+
+            <div class="contactPage__item">
+              <dt class="contactPage__label" data-i18n="contact_page_linkedin_label">LinkedIn</dt>
+              <dd class="contactPage__value">
+                <a class="contactPage__link" href="https://linkedin.com/in/luciamarchesi" target="_blank" rel="noreferrer">linkedin.com/in/luciamarchesi</a>
+              </dd>
+            </div>
+
+            <div class="contactPage__item">
+              <dt class="contactPage__label" data-i18n="contact_page_instagram_label">Instagram</dt>
+              <dd class="contactPage__value">
+                <a class="contactPage__link" href="https://instagram.com/luciamarchesi" target="_blank" rel="noreferrer">@luciamarchesi</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__text">© <span id="year"></span> Lucía Marchesi Zorzi</p>
+      <a class="footer__top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
