@@ -518,6 +518,12 @@ img{ max-width: 100%; display:block; }
   padding: 44px 0 86px;
 }
 
+.work__more {
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
+}
+
 .work__header{
   margin-bottom: 34px;
 }
@@ -562,8 +568,8 @@ img{ max-width: 100%; display:block; }
   display:block;
   text-decoration:none;
   color: inherit;
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -634,50 +640,145 @@ img{ max-width: 100%; display:block; }
 
 /* ===== PRACTICE SECTION ===== */
 .practice-section {
-  padding: 120px 0;
+  padding: 100px 0 120px;
   border-top: 1px solid rgba(30,30,30,.1);
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
-.practice-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
+.practice-intro { margin-bottom: 64px; }
 
 .practice-title {
-  margin: 0;
+  margin: 0 0 20px;
   font-family: var(--font-title);
   font-weight: 600;
-  font-size: clamp(40px, 5vw, 56px);
-  line-height: 1.1;
+  font-size: clamp(40px, 5.5vw, 72px);
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
 
 .practice-subtitle {
-  margin: 0 0 24px 0;
-  font-size: 20px;
-  line-height: 1.5;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(30,30,30,.58);
+  max-width: 540px;
+}
+
+.practice-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 32px;
+  border-top: 1px solid rgba(30,30,30,.14);
+}
+
+.practice-col {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+  text-decoration: none;
+  color: inherit;
+  transition: background .3s ease;
+}
+
+.practice-col:hover { background: transparent; }
+
+.practice-col__num {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(30,30,30,.35);
+  margin-bottom: 16px;
+}
+
+.practice-col__title {
+  margin: 0 0 20px;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: clamp(18px, 1.8vw, 24px);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: rgba(30,30,30,.92);
+}
+
+/* Photo slot with zoom hover */
+.practice-col__photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  background-color: rgba(30,30,30,.06);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(30,30,30,.09);
+  margin-bottom: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  transition: box-shadow .4s ease;
+}
+
+/* Inner pseudo-element handles the zoom so overflow:hidden clips it */
+.practice-col__photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  border-radius: inherit;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1), filter .5s ease;
+  filter: brightness(1);
+}
+
+.practice-col:hover .practice-col__photo {
+  box-shadow: 0 16px 40px rgba(0,0,0,.13);
+}
+
+.practice-col:hover .practice-col__photo::after {
+  transform: scale(1.06);
+  filter: brightness(1.04);
+}
+
+.practice-col__photo--1 { background-image: url('images/orfebreria/orfebreria.jpg'); }
+.practice-col__photo--2 { background-image: url('images/materiales-compuestos/M_C_LEVA.jpg'); }
+.practice-col__photo--3 { background-image: url('images/impresion-3d/FRUTERA.jpg'); }
+
+/* Fix: pseudo-element needs same image */
+.practice-col__photo--1::after { background-image: url('images/orfebreria/orfebreria.jpg'); }
+.practice-col__photo--2::after { background-image: url('images/materiales-compuestos/M_C_LEVA.jpg'); }
+.practice-col__photo--3::after { background-image: url('images/impresion-3d/FRUTERA.jpg'); }
+
+.practice-col__desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(30,30,30,.58);
+  flex: 1;
+}
+
+.practice-col__arrow {
+  display: inline-block;
+  margin-top: 32px;
+  font-size: 18px;
+  color: rgba(30,30,30,.35);
+  transition: transform .25s ease, color .25s ease;
+}
+
+.practice-col:hover .practice-col__arrow {
+  transform: translateX(8px);
   color: var(--ink);
-  font-weight: 400;
 }
 
-.practice-desc {
-  margin: 0 0 40px 0;
-  font-size: 16px;
-  line-height: 1.6;
-  color: rgba(30,30,30,.65);
-}
+.practice-divider { height: 1px; background: var(--line); }
 
-.practice-btn {
-  padding: 14px 28px;
-}
-
-.practice-divider{
-  height: 1px;
-  background: var(--line);
+@media (max-width: 860px) {
+  .practice-columns { grid-template-columns: 1fr; gap: 0; }
+  .practice-col {
+    border-bottom: 1px solid rgba(30,30,30,.14);
+    padding: 36px 0;
+  }
+  .practice-col:last-child { border-bottom: none; }
 }
 
 /* ===== PRACTICE DETAILS (practice.html) ===== */
@@ -976,9 +1077,6 @@ img{ max-width: 100%; display:block; }
     align-items: start;
   }
 }
-
-
-
 
 
 
