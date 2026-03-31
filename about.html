@@ -3,82 +3,210 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lucía Marchesi Zorzi — Product Designer</title>
-  <meta name="description" content="Lucía Marchesi Zorzi — Product Designer. Material innovation & strategic systems." />
+  <title>About — Lucía Marchesi Zorzi</title>
+  <meta name="description" content="About Lucía Marchesi Zorzi — Product Designer. Material innovation & strategic systems." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Sofia+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Sofia+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
- <!-- HEADER -->
- <header class="header">
+<body>
+<!-- HEADER -->
+<header class="header">
   <div class="container header__inner">
-    <a class="brand" href="#top" aria-label="Home">
+    <a class="brand" href="index.html" aria-label="Home">
       <span class="brand__mark">LMZ</span>
     </a>
-
     <nav class="nav" aria-label="Primary">
-      <a class="nav__link" href="#work">Work</a>
-      <a class="nav__link" href="#practice">Practice</a>
-      <a class="nav__link" href="#about">About</a>
-      <a class="nav__link" href="contact.html">Contact</a>
+      <a class="nav__link" href="index.html#work" data-i18n="nav_work">Work</a>
+      <a class="nav__link" href="practice.html" data-i18n="nav_practice">Practice</a>
+      <a class="nav__link is-active" href="about.html" data-i18n="nav_about">About</a>
+      <a class="nav__link" href="contact.html" data-i18n="nav_contact">Contact</a>
     </nav>
-
-    <div class="lang" aria-label="Language toggle">
-      <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
-      <span class="lang__sep">|</span>
-      <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+    <div class="header__right">
+      <div class="lang" aria-label="Language toggle">
+        <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
+        <span class="lang__sep">|</span>
+        <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
     </div>
+  </div>
+  <div id="mobileMenu" class="mobileMenu" hidden>
+    <nav class="mobileMenu__nav" aria-label="Mobile">
+      <a class="mobileMenu__link" href="index.html#work" data-i18n="nav_work">Work</a>
+      <a class="mobileMenu__link" href="practice.html" data-i18n="nav_practice">Practice</a>
+      <a class="mobileMenu__link is-active" href="about.html" data-i18n="nav_about">About</a>
+      <a class="mobileMenu__link" href="contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
   </div>
   <div class="header__rule" aria-hidden="true"></div>
 </header>
 
-  <main id="top">
-    
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <h2 class="section__title" data-i18n="about_title">ABOUT</h2>
+<main id="top">
 
-    <div class="aboutGrid">
-      <div class="aboutImage">
-        <img src="./images/about-me/LU-CON%20FONDO.jpg" alt="Lucía Marchesi portrait">
+  <!-- HERO ABOUT -->
+  <section class="about-hero">
+    <div class="container">
+      <p class="case-kicker" data-i18n="about_page_kicker">ABOUT ME</p>
+      <h1 class="about-hero__title" data-i18n="about_page_intro">I'm Lucía — a product designer who thinks in systems, works with her hands, and finds meaning at the intersection of craft, material, and function.</h1>
+    </div>
+  </section>
+
+  <div class="case-divider" aria-hidden="true"></div>
+
+  <!-- BIO + PORTRAIT -->
+  <section class="section about-bio">
+    <div class="container about-bio__grid">
+      <div class="about-bio__image js-reveal">
+        <img src="./images/about-me/LU-CON%20FONDO.jpg" alt="Lucía Marchesi Zorzi" loading="lazy">
       </div>
+      <div class="about-bio__content">
+        <p class="about-bio__text" data-i18n="about_page_bio1">My practice is built around a simple belief: you design better when you understand how things are made.</p>
+        <p class="about-bio__text" data-i18n="about_page_bio2">I studied Industrial Design and finished my Master's with a thesis on material-driven product systems.</p>
+        <p class="about-bio__text about-bio__text--location" data-i18n="about_page_bio3">Based in Madrid. Available for product design projects, research collaborations, and strategic design work.</p>
 
-      <div class="aboutContent">
-        <p class="section__desc aboutText" data-i18n="about_desc">
-          I’m a product designer focused on material innovation and strategic systems, bridging craft, engineering and narrative.
-        </p>
-
-        <a href="./about.html" class="btn btn--ghost aboutBtn" data-i18n="about_btn">
-          More about me <span class="btn__arrow">→</span>
-        </a>
+        <div class="about-bio__actions">
+          <a class="btn btn--primary" href="./assets/LMZ_CV.pdf" download data-i18n="about_dl_cv">Download CV</a>
+          <a class="btn btn--ghost" href="./assets/LMZ_Portfolio.pdf" download data-i18n="about_dl_portfolio">Download Portfolio</a>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <div class="case-divider" aria-hidden="true"></div>
+
+  <!-- TOOLS -->
+  <section class="section about-tools">
+    <div class="container">
+      <p class="case-kicker" data-i18n="about_tools_title">TOOLS & SKILLS</p>
+      <div class="about-tools__grid">
+        <span class="about-tool js-reveal" data-i18n="about_tool_1">Rhino 3D</span>
+        <span class="about-tool js-reveal" data-i18n="about_tool_2">KeyShot</span>
+        <span class="about-tool js-reveal" data-i18n="about_tool_3">SolidWorks</span>
+        <span class="about-tool js-reveal" data-i18n="about_tool_4">Adobe CC</span>
+        <span class="about-tool js-reveal" data-i18n="about_tool_5">Vizcom</span>
+        <span class="about-tool js-reveal" data-i18n="about_tool_6">Figma</span>
+        <span class="about-tool js-reveal" data-i18n="about_tool_7">3D Printing</span>
+        <span class="about-tool js-reveal" data-i18n="about_tool_8">Composites</span>
+        <span class="about-tool js-reveal" data-i18n="about_tool_9">Goldsmithing</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-divider" aria-hidden="true"></div>
+
+  <!-- TIMELINE -->
+  <section class="section about-timeline">
+    <div class="container">
+      <p class="case-kicker" data-i18n="about_timeline_title">JOURNEY</p>
+      <div class="timeline">
+
+        <div class="timeline__item js-reveal">
+          <span class="timeline__year" data-i18n="about_tl_1_year">2018</span>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <p class="timeline__text" data-i18n="about_tl_1_text">Started Industrial Design degree</p>
+        </div>
+
+        <div class="timeline__item js-reveal">
+          <span class="timeline__year" data-i18n="about_tl_2_year">2022</span>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <p class="timeline__text" data-i18n="about_tl_2_text">First product project with a brand — lighting design</p>
+        </div>
+
+        <div class="timeline__item js-reveal">
+          <span class="timeline__year" data-i18n="about_tl_3_year">2023</span>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <p class="timeline__text" data-i18n="about_tl_3_text">Master's in Advanced Product Design</p>
+        </div>
+
+        <div class="timeline__item js-reveal">
+          <span class="timeline__year" data-i18n="about_tl_4_year">2024</span>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <p class="timeline__text" data-i18n="about_tl_4_text">Thesis on material-driven product systems (V-Pin)</p>
+        </div>
+
+        <div class="timeline__item js-reveal">
+          <span class="timeline__year" data-i18n="about_tl_5_year">2025</span>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <p class="timeline__text" data-i18n="about_tl_5_text">Freelance · Aurora for iSiMAR · HoldUp · SafeStep</p>
+        </div>
+
+        <div class="timeline__item timeline__item--active js-reveal">
+          <span class="timeline__year" data-i18n="about_tl_6_year">2026</span>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <p class="timeline__text" data-i18n="about_tl_6_text">Kyrre Shift · Candela for esPattio · open to new projects</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="case-divider" aria-hidden="true"></div>
+
+  <!-- GALLERY -->
+  <section class="section about-gallery">
+    <div class="container">
+      <p class="case-kicker" data-i18n="about_gallery_title">A BIT MORE OF ME</p>
+      <div class="about-gallery__grid">
+        <div class="about-gallery__item about-gallery__item--tall js-reveal">
+          <img src="./images/about-me/LU-SIN%20FONDO.png" alt="Lucía" loading="lazy">
+        </div>
+        <div class="about-gallery__item js-reveal">
+          <img src="./images/orfebreria/orfebreria.jpg" alt="Goldsmithing work" loading="lazy">
+        </div>
+        <div class="about-gallery__item js-reveal">
+          <img src="./images/materiales-compuestos/M_C_LEVA.jpg" alt="Composite materials" loading="lazy">
+        </div>
+        <div class="about-gallery__item js-reveal">
+          <img src="./images/impresion-3d/FRUTERA.jpg" alt="3D printing" loading="lazy">
+        </div>
+        <div class="about-gallery__item js-reveal">
+          <img src="./images/aurora/RENDER_DETALLE.png" alt="Aurora detail" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-divider" aria-hidden="true"></div>
+
+  <!-- CTA -->
+  <section class="section about-cta">
+    <div class="container about-cta__inner">
+      <a class="btn btn--primary" href="contact.html" data-i18n="about_cta_contact">Let's work together →</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer footer--full">
+  <div class="footer__cta-band">
+    <div class="container">
+      <p class="footer__cta-text">
+        <span data-i18n="footer_cta">Open to new projects —</span>
+        <a class="footer__cta-link" href="contact.html" data-i18n="footer_cta_link">Let's talk</a>
+      </p>
     </div>
   </div>
-</section>
-
-</div>
-</section>
-  </main>
-
-  <footer class="footer">
+  <div class="footer__main">
     <div class="container footer__inner">
-      <p class="footer__text">© <span id="year"></span> LMZ</p>
-      <a class="footer__top" href="#top">Back to top ↑</a>
+      <p class="footer__copy">© <span id="year"></span> Lucía Marchesi Zorzi</p>
+      <div class="footer__links">
+        <a class="footer__link" href="mailto:luciamarchesi0@gmail.com">Email</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/l-marchesi/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="footer__link" href="https://www.instagram.com/lumarchesi.di/" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+      <a class="footer__top" href="#top" data-i18n="footer_back">Back to top ↑</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <button class="help" type="button" aria-label="Help">?</button>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
