@@ -638,6 +638,12 @@ img{ max-width: 100%; display:block; }
   .btn{ width: 100%; justify-content:center; }
 }
 
+.work__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px; /* ajusta si quieres más aire */
+}
+
 /* ===== PRACTICE SECTION ===== */
 .practice-section {
   padding: 100px 0 120px;
