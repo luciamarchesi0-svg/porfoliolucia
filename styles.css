@@ -1972,3 +1972,31 @@ main {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* ===== Fixes April 2026 ===== */
+html, body, a, button, .btn, .nav__link, .lang__btn, .projectCard {
+  cursor: auto !important;
+}
+.cursor { display: none !important; }
+
+.work__cta{
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn--ghost::before{
+  background: rgba(30,30,30,.82);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible{
+  color: #fff;
+}
+
+.btn--ghost:hover .btn__arrow,
+.btn--ghost:focus-visible .btn__arrow{
+  color: #fff;
+}
