@@ -209,7 +209,7 @@ img{ max-width: 100%; display:block; }
 .header{
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   background: rgba(246,244,241,.92);
   backdrop-filter: blur(8px);
 }
@@ -217,7 +217,7 @@ img{ max-width: 100%; display:block; }
 .header__inner{
   height: var(--header-h);
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* LMZ | nav | lang */
+  grid-template-columns: auto 1fr auto; /* LMZ | spacer | right-group */
   align-items: center;
 }
 
@@ -1132,8 +1132,11 @@ img{ max-width: 100%; display:block; }
 /* Mobile menu panel */
 .mobileMenu{
   position: fixed;
-  inset: var(--header-h) 0 0 0;
-  z-index: 9;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
   background: var(--bg);
   display: flex;
   flex-direction: column;
