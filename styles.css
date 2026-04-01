@@ -1547,3 +1547,428 @@ body.menu-open{ overflow: hidden; }
   .practice-grid{ grid-template-columns: 1fr; gap: 28px; }
 }
 
+
+
+/* ==============================================
+   ANIMATIONS v2 — Cards, page transitions, cursor
+   ============================================== */
+
+/* ── Page transition fade ── */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  animation: pageFadeIn 0.4s var(--ease) both;
+}
+
+/* ── Custom cursor (desktop only) ── */
+@media (pointer: fine) {
+  body { cursor: none; }
+
+  .cursor {
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+  }
+
+  .cursor__dot {
+    position: absolute;
+    width: 8px; height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s var(--ease), width 0.25s var(--ease), height 0.25s var(--ease);
+  }
+
+  .cursor__ring {
+    position: absolute;
+    width: 36px; height: 36px;
+    border: 1.5px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s linear, width 0.3s var(--ease), height 0.3s var(--ease), opacity 0.25s ease;
+  }
+
+  /* Hover states */
+  body.cursor-hover .cursor__dot {
+    width: 12px; height: 12px;
+  }
+  body.cursor-hover .cursor__ring {
+    width: 56px; height: 56px;
+    opacity: 0.4;
+  }
+
+  body.cursor-drag .cursor__ring {
+    width: 64px; height: 64px;
+    opacity: 0.25;
+  }
+}
+
+/* ── Project cards ── */
+.projectCard {
+  position: relative;
+  will-change: transform;
+  transition: transform 0.4s var(--ease);
+}
+
+.projectCard:hover {
+  transform: translateY(-6px);
+}
+
+/* Media wrapper gets shadow on hover */
+.projectCard__media {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s var(--ease);
+}
+
+.projectCard:hover .projectCard__media {
+  box-shadow: 0 24px 56px rgba(0,0,0,0.13);
+  transform: none; /* override old rule */
+}
+
+/* Image scale on hover */
+.projectCard__img {
+  transition: transform 0.6s var(--ease);
+}
+.projectCard:hover .projectCard__img {
+  transform: scale(1.04);
+}
+
+/* Overlay that fades in on hover */
+.projectCard__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(30,30,30,0);
+  transition: background 0.4s ease;
+  pointer-events: none;
+}
+.projectCard:hover .projectCard__media::after {
+  background: rgba(30,30,30,0.04);
+}
+
+/* Meta slides up slightly */
+.projectCard__meta {
+  transition: transform 0.35s var(--ease);
+}
+.projectCard:hover .projectCard__meta {
+  transform: translateY(-3px);
+}
+
+/* Project name underline draw on hover */
+.projectCard__name {
+  position: relative;
+  display: inline-block;
+}
+.projectCard__name::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 2px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+.projectCard:hover .projectCard__name::after {
+  transform: scaleX(1);
+}
+
+/* ── Button refinements ── */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle fill sweep on ghost button */
+.btn--ghost::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform: translateX(-101%);
+  transition: transform 0.35s var(--ease);
+  z-index: 0;
+}
+.btn--ghost:hover::before {
+  transform: translateX(0);
+}
+.btn--ghost:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  background: transparent; /* let ::before handle it */
+}
+.btn--ghost > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Primary button — lift + glow */
+.btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.2);
+}
+
+/* ── Nav link hover ── */
+.nav__link {
+  transition: color 0.2s ease;
+}
+
+/* ── Case back button ── */
+.case-back {
+  position: relative;
+  overflow: hidden;
+}
+.case-back::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform: translateX(-101%);
+  transition: transform 0.3s var(--ease);
+  z-index: 0;
+}
+.case-back:hover::before { transform: translateX(0); }
+.case-back:hover { color: #fff; transform: none; background: transparent; }
+.case-back > * { position: relative; z-index: 1; }
+
+/* ── Scroll reveal: stagger for cards ── */
+.projectCard:nth-child(2) { transition-delay: 0.08s; }
+.projectCard:nth-child(3) { transition-delay: 0.16s; }
+.projectCard:nth-child(4) { transition-delay: 0.24s; }
+.projectCard:nth-child(5) { transition-delay: 0.32s; }
+.projectCard:nth-child(6) { transition-delay: 0.40s; }
+
+/* ── Footer CTA hover ── */
+.footer__cta-band {
+  transition: background 0.3s ease;
+}
+
+/* ── About tool pills ── */
+.about-tool {
+  transition: background 0.25s var(--ease), color 0.25s ease, border-color 0.25s ease, transform 0.2s var(--ease);
+}
+.about-tool:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Timeline dot pulse on active ── */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(30,30,30,0.15); }
+  50%       { box-shadow: 0 0 0 8px rgba(30,30,30,0); }
+}
+.timeline__item--active .timeline__dot {
+  animation: pulse 2.5s ease infinite;
+}
+
+/* ── Gallery image hover ── */
+.about-gallery__item {
+  overflow: hidden;
+}
+.about-gallery__item img {
+  transition: transform 0.55s var(--ease);
+}
+.about-gallery__item:hover img {
+  transform: scale(1.06);
+}
+
+/* ── Reduce motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  body { animation: none; }
+  .cursor { display: none !important; }
+}
+
+
+/* ==============================================
+   ANIMATIONS: Cards — subtle & elegant
+   ============================================== */
+
+/* Project cards */
+.projectCard{
+  cursor: pointer;
+}
+
+.projectCard__media{
+  /* smooth transition baseline */
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    box-shadow .45s cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
+}
+
+.projectCard:hover .projectCard__media{
+  transform: translateY(-6px) scale(1.015);
+  box-shadow:
+    0 12px 32px rgba(0,0,0,.08),
+    0 2px 8px rgba(0,0,0,.04);
+}
+
+/* Image inside zooms very softly */
+.projectCard__img{
+  transition: transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.projectCard:hover .projectCard__img{
+  transform: scale(1.04);
+}
+
+/* Meta text fades up gently */
+.projectCard__meta{
+  transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.projectCard:hover .projectCard__meta{
+  transform: translateY(-3px);
+}
+
+/* Project name underline on hover */
+.projectCard__name{
+  position: relative;
+  display: inline-block;
+}
+.projectCard__name::after{
+  content: '';
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 100%; height: 1.5px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+.projectCard:hover .projectCard__name::after{
+  transform: scaleX(1);
+}
+
+/* ── Scroll reveal: smoother stagger for work grid ── */
+.work__list .projectCard:nth-child(2){ transition-delay: 80ms !important; }
+.work__list .projectCard:nth-child(3){ transition-delay: 160ms !important; }
+.work__list .projectCard:nth-child(4){ transition-delay: 240ms !important; }
+.work__list .projectCard:nth-child(5){ transition-delay: 320ms !important; }
+.work__list .projectCard:nth-child(6){ transition-delay: 400ms !important; }
+
+/* ==============================================
+   ANIMATIONS: Page transitions
+   ============================================== */
+
+/* Fade-in on load */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+main {
+  animation: pageFadeIn .5s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* Case study images: subtle parallax feel on hover */
+.case-image{
+  transition: box-shadow .4s ease;
+}
+.case-image:hover{
+  box-shadow: 0 16px 48px rgba(0,0,0,.09);
+}
+
+/* Back button on case studies — arrow slides */
+.case-back{
+  overflow: hidden;
+  position: relative;
+}
+.case-back::before{
+  content: '←';
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transition: left .3s var(--ease), opacity .3s ease;
+}
+.case-back:hover::before{
+  left: 14px;
+  opacity: .6;
+}
+
+/* Buttons: micro press */
+.btn:active{
+  transform: translateY(0) scale(0.98);
+}
+
+/* ==============================================
+   ANIMATIONS: Hero name — staggered reveal
+   ============================================== */
+
+@keyframes heroLine {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero__title span:nth-child(1){
+  display: inline-block;
+  animation: heroLine .7s .05s cubic-bezier(.2,.8,.2,1) both;
+}
+.hero__title span:nth-child(2){
+  display: inline-block;
+  animation: heroLine .7s .15s cubic-bezier(.2,.8,.2,1) both;
+}
+.hero__title span:nth-child(3){
+  display: inline-block;
+  animation: heroLine .7s .25s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero__role{
+  animation: heroLine .6s .35s cubic-bezier(.2,.8,.2,1) both;
+}
+.hero__tagline{
+  animation: heroLine .6s .42s cubic-bezier(.2,.8,.2,1) both;
+}
+.hero__actions{
+  animation: heroLine .6s .5s cubic-bezier(.2,.8,.2,1) both;
+}
+.hero__based{
+  animation: heroLine .6s .58s cubic-bezier(.2,.8,.2,1) both;
+}
+.hero__right{
+  animation: heroLine .8s .2s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* ==============================================
+   ANIMATIONS: Nav links & footer CTA
+   ============================================== */
+
+/* Footer CTA band — subtle pulse on load */
+.footer__cta-link{
+  position: relative;
+  display: inline-block;
+}
+.footer__cta-link::after{
+  content: ' →';
+  display: inline-block;
+  transition: transform .3s var(--ease);
+}
+.footer__cta-link:hover::after{
+  transform: translateX(5px);
+}
+
+/* Practice columns hover — lift */
+.practice-col{
+  transition: transform .35s var(--ease);
+}
+.practice-col:hover{
+  transform: translateY(-4px);
+}
+
+/* ==============================================
+   ANIMATIONS: reduce-motion respect
+   ============================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-delay: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
