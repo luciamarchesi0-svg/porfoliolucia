@@ -1,10 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kyrre Shift — Case Study</title>
-  <meta name="description" content="Kyrre Shift — case study." />
+  <!-- SEO & Open Graph -->
+  <title>Kyrre Shift — Lucía Marchesi Zorzi</title>
+  <meta name="description" content="Kyrre Shift: a reversible stool and side table in one, designed for flexible space-saving homes. IKEA KYRRE reinterpretation." />
+  <link rel="canonical" href="https://luciamarchesizorzi.com/projects/kyrre-shift.html" />
+
+  <!-- Open Graph (LinkedIn, Facebook, WhatsApp, Slack) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Kyrre Shift — Lucía Marchesi Zorzi" />
+  <meta property="og:description" content="Kyrre Shift: a reversible stool and side table in one, designed for flexible space-saving homes. IKEA KYRRE reinterpretation." />
+  <meta property="og:url" content="https://luciamarchesizorzi.com/projects/kyrre-shift.html" />
+  <meta property="og:image" content="https://luciamarchesizorzi.com/images/kyrre-shift/RENDER_APILADOS.png" />
+  <meta property="og:image:alt" content="Kyrre Shift stacked renders" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Lucía Marchesi Zorzi" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kyrre Shift — Lucía Marchesi Zorzi" />
+  <meta name="twitter:description" content="Kyrre Shift: a reversible stool and side table in one, designed for flexible space-saving homes. IKEA KYRRE reinterpretation." />
+  <meta name="twitter:image" content="https://luciamarchesizorzi.com/images/kyrre-shift/RENDER_APILADOS.png" />
+  <meta name="twitter:image:alt" content="Kyrre Shift stacked renders" />
+
+  <!-- Extra -->
+  <meta name="author" content="Lucía Marchesi Zorzi" />
+  <meta name="robots" content="index, follow" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,159 +37,192 @@
 </head>
 
 <body>
-  <header class="case-top">
-    <div class="container">
-      <a class="case-back" href="../index.html#work">Back</a>
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="../index.html" aria-label="Home">
+      <span class="brand__mark">LMZ</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="../index.html#work" data-i18n="nav_work">Work</a>
+      <a class="nav__link" href="../practice.html" data-i18n="nav_practice">Practice</a>
+      <a class="nav__link" href="../about.html" data-i18n="nav_about">About</a>
+      <a class="nav__link" href="../contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="header__right">
+      <div class="lang" aria-label="Language toggle">
+        <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
+        <span class="lang__sep">|</span>
+        <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+      </div>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
     </div>
-  </header>
+  </div>
+  <div class="header__rule" aria-hidden="true"></div>
+</header>
+  <div id="mobileMenu" class="mobileMenu" hidden>
+    <nav class="mobileMenu__nav" aria-label="Mobile">
+      <a class="mobileMenu__link" href="../index.html#work" data-i18n="nav_work">Work</a>
+      <a class="mobileMenu__link" href="../practice.html" data-i18n="nav_practice">Practice</a>
+      <a class="mobileMenu__link" href="../about.html" data-i18n="nav_about">About</a>
+      <a class="mobileMenu__link" href="../contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+  </div>
 
-  <main>
-    <section class="case-media">
-      <div class="container">
-        <div class="case-image" aria-label="Project image">
-          <img class="case-image__img" src="../images/kyrre-shift/RENDER_APILADOS.png" alt="Kyrre Shift — project image" loading="lazy" decoding="async">
-        </div>
+<main id="top">
+  <section class="case-media">
+    <div class="container">
+      <div class="case-image">
+        <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_AMIGOS.png" alt="" data-i18n-alt="kyrre_hero_alt" loading="eager" decoding="async">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="case-titleBlock">
-      <div class="container">
-        <p class="case-kicker">FURNITURE DESIGN — 2026</p>
-        <h1 class="case-title">Kyrre Shift</h1>
-
-        <div class="case-meta">
+  <section class="case-titleBlock">
+    <div class="container">
+      <p class="case-kicker" data-i18n="kyrre_kicker"></p>
+      <h1 class="case-title" data-i18n="kyrre_title"></h1>
+      <div class="case-meta">
           <div>
-            <p class="case-meta__label">Summary</p>
-            <p class="case-meta__value">Stool and side table in one. Designed for flexible, space-saving homes.</p>
+            <p class="case-meta__label" data-i18n="kyrre_meta_sum_label"></p>
+            <p class="case-meta__value" data-i18n="kyrre_meta_sum_val"></p>
           </div>
           <div>
-            <p class="case-meta__label">Focus</p>
-            <p class="case-meta__value">Multifunctional furniture · small space living · stackable design</p>
+            <p class="case-meta__label" data-i18n="kyrre_meta_focus_label"></p>
+            <p class="case-meta__value" data-i18n="kyrre_meta_focus_val"></p>
           </div>
           <div>
-            <p class="case-meta__label">Role</p>
-            <p class="case-meta__value">Designer</p>
+            <p class="case-meta__label" data-i18n="kyrre_meta_role_label"></p>
+            <p class="case-meta__value" data-i18n="kyrre_meta_role_val"></p>
           </div>
           <div>
-            <p class="case-meta__label">Tools</p>
-            <p class="case-meta__value">Rhino · KeyShot · Adobe CC · Vizcom</p>
+            <p class="case-meta__label" data-i18n="kyrre_meta_tools_label"></p>
+            <p class="case-meta__value" data-i18n="kyrre_meta_tools_val"></p>
           </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <div class="case-divider" aria-hidden="true"></div>
-
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Overview</h2>
-        <p class="case-section__text">Kyrre Shift is a reinterpretation of IKEA’s KYRRE stool designed to expand its everyday functionality. By introducing a reversible geometry, the object works both as a seat and as a small side table while remaining stackable and compact.</p>
+        <h2 class="case-section__title" data-i18n="kyrre_s1_title"></h2>
+        <p class="case-section__text" data-i18n="kyrre_s1_text"></p>
         <div class="case-shot">
-          <div class="case-image" aria-label="Overview image">
-            <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_AMIGOS.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_AMIGOS.png" alt="" data-i18n-alt="kyrre_s1_alt" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
     </section>
-
     <div class="case-divider" aria-hidden="true"></div>
-
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Problem</h2>
-        <p class="case-section__text">As living spaces become smaller, furniture must serve multiple purposes without increasing visual or spatial clutter. Traditional stools often fulfill a single function, limiting their usefulness in compact homes.</p>
+        <h2 class="case-section__title" data-i18n="kyrre_s2_title"></h2>
+        <p class="case-section__text" data-i18n="kyrre_s2_text"></p>
         <div class="case-shot">
-          <div class="case-image" aria-label="Problem image">
-            <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_PERSONA%20COMPRANDO%20IKEA.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_PERSONA%20COMPRANDO%20IKEA.png" alt="" data-i18n-alt="kyrre_s2_alt" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
     </section>
-
     <div class="case-divider" aria-hidden="true"></div>
-
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Solution</h2>
-        <p class="case-section__text">Kyrre Shift transforms the KYRRE stool into a reversible piece that works as both a seat and a side table, while remaining stackable. The design expands functionality without altering the simplicity of the original object.</p>
+        <h2 class="case-section__title" data-i18n="kyrre_s3_title"></h2>
+        <p class="case-section__text" data-i18n="kyrre_s3_text"></p>
         <div class="case-shot">
-          <div class="case-image" aria-label="Solution image">
-            <img class="case-image__img" src="../images/kyrre-shift/RENDER_DESPLIEGUE%20Y%20TABURETE.png" alt="Kyrre Shift — solution image" loading="lazy" decoding="async">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/kyrre-shift/RENDER_DESPLIEGUE%20Y%20TABURETE.png" alt="" data-i18n-alt="kyrre_s3_alt" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
     </section>
-
     <div class="case-divider" aria-hidden="true"></div>
-
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Next steps</h2>
-        <p class="case-section__text">Further iterations will refine proportions and structural details, followed by manufacturing validation and user testing to evaluate stability, usability, and stackability. Future development would explore scalable production and integration within existing furniture systems.</p>
+        <h2 class="case-section__title" data-i18n="kyrre_s4_title"></h2>
+        <p class="case-section__text" data-i18n="kyrre_s4_text"></p>
         <div class="case-shot">
-          <div class="case-image" aria-label="Process image">
-            <img class="case-image__img" src="../images/kyrre-shift/LAMINA_PROCESO.png" alt="Kyrre Shift — process image" loading="lazy" decoding="async">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/kyrre-shift/LAMINA_PROCESO.png" alt="" data-i18n-alt="kyrre_s4_alt" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
     </section>
 
     <div class="case-divider" aria-hidden="true"></div>
-
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Gallery</h2>
-        <div class="case-gallery" aria-label="Kyrre Shift image gallery">
-          <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_APLILADO%20Y%20AGARRE.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
-          </div>
-          <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_CASA%20CALIDA.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
-          </div>
-          <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_IKEA%20VACIO.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
-          </div>
-          <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/RENDER_MESA%20Y%20ALMOHADON.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
-          </div>
-          <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/RENDER_MESA%20Y%20ALMOHADON.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
-          </div>
-             <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/LAMINA_INVESTIGACION.png" alt="Kyrre Shift — overview image" loading="lazy" decoding="async">
-          </div>
-             <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/LAMINA_INFORMACION.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
-          </div>
-             <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/LAMINA_USUARIO.png" alt="Kyrre Shift — problem image" loading="lazy" decoding="async">
-          </div>
-          <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/LAMINA_EXPLORACION.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
-          </div>
-          <div class="case-image">
-            <img class="case-image__img" src="../images/kyrre-shift/LAMINA_USO.png" alt="Kyrre Shift — image" loading="lazy" decoding="async">
-          </div>
+        <h2 class="case-section__title" data-i18n="kyrre_gallery_title"></h2>
+        <div class="case-gallery">
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_APLILADO%20Y%20AGARRE.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_CASA%20CALIDA.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/FOTOMONTAJE_IKEA%20VACIO.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/RENDER_MESA%20Y%20ALMOHADON.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/LAMINA_INVESTIGACION.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/LAMINA_INFORMACION.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/LAMINA_USUARIO.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/LAMINA_EXPLORACION.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/LAMINA_USO.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
+        <div class="case-image">
+          <img class="case-image__img" src="../images/kyrre-shift/RENDER_APILADOS.png" alt="" data-i18n-alt="kyrre_g_alt" loading="lazy" decoding="async">
+        </div>
         </div>
       </div>
     </section>
 
-    <div class="case-divider" aria-hidden="true"></div>
+  <div class="case-divider" aria-hidden="true"></div>
+  <section class="case-section">
+    <div class="container">
+      <a class="btn btn--ghost" href="../index.html#work" data-i18n="case_back_work">← Back to projects</a>
+    </div>
+  </section>
+</main>
 
-    <section class="case-section">
+  <footer class="footer footer--full">
+    <div class="footer__cta-band">
       <div class="container">
-        <a class="btn btn--ghost" href="../index.html#work">← Back to projects</a>
+        <p class="footer__cta-text">
+          <span data-i18n="footer_cta">Open to new projects —</span>
+          <a class="footer__cta-link" href="../contact.html" data-i18n="footer_cta_link">Let's talk</a>
+        </p>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__text">© <span id="year"></span> LMZ</p>
-      <a class="footer__top" href="../index.html#work">Back to work ↑</a>
+    </div>
+    <div class="footer__main">
+      <div class="container footer__inner">
+        <p class="footer__copy">© <span id="year"></span> Lucía Marchesi Zorzi</p>
+        <div class="footer__links">
+          <a class="footer__link" href="mailto:luciamarchesi0@gmail.com">Email</a>
+          <a class="footer__link" href="https://www.linkedin.com/in/l-marchesi/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="footer__link" href="https://www.instagram.com/lumarchesi.di/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+        <a class="footer__top" href="#top" data-i18n="footer_back">Back to top ↑</a>
+      </div>
     </div>
   </footer>
-
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="../script.js"></script>
 </body>
 </html>
