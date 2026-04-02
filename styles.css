@@ -407,14 +407,6 @@ img{ max-width: 100%; display:block; }
   align-items: center;
 }
 
-.hero__image-placeholder{
-  color: rgba(30,30,30,.3);
-}
-
-.hero__portrait{
-  width: min(670px, 100%);
-  height: auto;
-}
 
 /* ===== Buttons ===== */
 .btn{
