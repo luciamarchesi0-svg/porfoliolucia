@@ -1,10 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HoldUp — Case Study</title>
-  <meta name="description" content="HoldUp — non-invasive bathroom safety grip system using suction anchoring." />
+
+  <!-- SEO -->
+  <title>HoldUp — Lucía Marchesi Zorzi</title>
+  <meta name="description" content="HoldUp: a non-invasive bathroom safety grip system using suction anchoring to improve accessibility without drilling or damaging surfaces." />
+  <meta name="author" content="Lucía Marchesi Zorzi" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://luciamarchesizorzi.com/projects/holdup.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="HoldUp — Lucía Marchesi Zorzi" />
+  <meta property="og:description" content="HoldUp: a non-invasive bathroom safety grip system using suction anchoring to improve accessibility without drilling or damaging surfaces." />
+  <meta property="og:url" content="https://luciamarchesizorzi.com/projects/holdup.html" />
+  <meta property="og:image" content="https://luciamarchesizorzi.com/images/holdup/FOTOMONTAJE_BA%C3%91O.png" />
+  <meta property="og:image:alt" content="HoldUp bathroom safety system render" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Lucía Marchesi Zorzi" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HoldUp — Lucía Marchesi Zorzi" />
+  <meta name="twitter:description" content="HoldUp: a non-invasive bathroom safety grip system using suction anchoring to improve accessibility without drilling or damaging surfaces." />
+  <meta name="twitter:image" content="https://luciamarchesizorzi.com/images/holdup/FOTOMONTAJE_BA%C3%91O.png" />
+  <meta name="twitter:image:alt" content="HoldUp bathroom safety system render" />
+
   <link rel="stylesheet" href="../styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,17 +37,57 @@
 </head>
 
 <body>
-  <header class="case-top">
-    <div class="container">
-      <a class="case-back" href="../index.html#work">Back</a>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="../index.html" aria-label="Home">
+        <span class="brand__mark">LMZ</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="../index.html#work" data-i18n="nav_work">Work</a>
+        <a class="nav__link" href="../practice.html" data-i18n="nav_practice">Practice</a>
+        <a class="nav__link" href="../about.html" data-i18n="nav_about">About</a>
+        <a class="nav__link" href="../contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="header__right">
+        <div class="lang" aria-label="Language toggle">
+          <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
+          <span class="lang__sep">|</span>
+          <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+        </div>
+
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
     </div>
+
+    <div class="header__rule" aria-hidden="true"></div>
   </header>
 
-  <main>
+  <div id="mobileMenu" class="mobileMenu" hidden>
+    <nav class="mobileMenu__nav" aria-label="Mobile">
+      <a class="mobileMenu__link" href="../index.html#work" data-i18n="nav_work">Work</a>
+      <a class="mobileMenu__link" href="../practice.html" data-i18n="nav_practice">Practice</a>
+      <a class="mobileMenu__link" href="../about.html" data-i18n="nav_about">About</a>
+      <a class="mobileMenu__link" href="../contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+  </div>
+
+  <main id="top">
     <section class="case-media">
       <div class="container">
-        <div class="case-image" aria-label="Project image">
-          <img class="case-image__img" src="../images/holdup/FOTOMONTAJE_BA%C3%91O.png" alt="HoldUp — project image" loading="lazy" decoding="async">
+        <div class="case-image">
+          <img
+            class="case-image__img"
+            src="../images/holdup/FOTOMONTAJE_BA%C3%91O.png"
+            alt="HoldUp installed in bathroom context"
+            loading="eager"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
@@ -39,17 +104,17 @@
           </div>
           <div>
             <p class="case-meta__label">Users</p>
-            <p class="case-meta__value">Temporary/permanent mobility needs · Caregivers · Rentals</p>
+            <p class="case-meta__value">Temporary or permanent mobility needs · Caregivers · Rental environments</p>
           </div>
           <div>
             <p class="case-meta__label">Role</p>
-            <p class="case-meta__value">Product design · Prototyping · Validation criteria</p>
+            <p class="case-meta__value">Product design · System thinking · Validation criteria</p>
           </div>
           <div>
             <p class="case-meta__label">Summary</p>
             <p class="case-meta__value">
-              A non-invasive bathroom safety grip system that anchors with suction, designed to improve accessibility without drilling
-              or damaging the property.
+              HoldUp is a bathroom safety grip system designed to improve accessibility without drilling or damaging the property.
+              It explores how a support product can be reliable, removable and visually integrated into the home.
             </p>
           </div>
         </div>
@@ -62,12 +127,19 @@
       <div class="container">
         <h2 class="case-section__title">Overview</h2>
         <p class="case-section__text">
-          HoldUp addresses the need for adaptable support solutions in spaces where traditional installations are not viable.
-          It is designed for users who require temporary or flexible assistance, as well as for environments where preserving the integrity of surfaces is essential.
+          HoldUp addresses the need for adaptable support solutions in spaces where traditional grab bars are not viable.
+          It is conceived for users who require temporary or flexible assistance, and for contexts where preserving surfaces
+          and avoiding construction work is essential.
         </p>
         <div class="case-shot">
-          <div class="case-image" aria-label="Overview image">
-            <img class="case-image__img" src="../images/holdup/FOTOMONTAJE-SE%C3%91ORA%20AGARRANDO.png" alt="HoldUp — overview image" loading="lazy" decoding="async">
+          <div class="case-image">
+            <img
+              class="case-image__img"
+              src="../images/holdup/FOTOMONTAJE-SE%C3%91ORA%20AGARRANDO.png"
+              alt="HoldUp being used by a person in bathroom context"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
@@ -77,14 +149,21 @@
 
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Problem</h2>
+        <h2 class="case-section__title">The problem</h2>
         <p class="case-section__text">
-          Traditional grab bars require invasive installation and long lead times. That friction delays safety improvements and excludes
-          renters or temporary needs.
+          Conventional bathroom support bars usually require drilling, tools and a permanent installation.
+          That creates friction for renters, temporary recovery situations and households that need a fast solution
+          without altering the space. In many cases, the barrier is not the lack of need, but the complexity of implementation.
         </p>
         <div class="case-shot">
-          <div class="case-image" aria-label="Problem image">
-            <img class="case-image__img" src="../images/holdup/FOTOMONTAJE-SE%C3%91OR%20AGARRANDO.png" alt="HoldUp — problem image" loading="lazy" decoding="async">
+          <div class="case-image">
+            <img
+              class="case-image__img"
+              src="../images/holdup/FOTOMONTAJE-SE%C3%91OR%20AGARRANDO.png"
+              alt="HoldUp use case showing support need"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
@@ -94,18 +173,21 @@
 
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Solution</h2>
+        <h2 class="case-section__title">The proposal</h2>
         <p class="case-section__text">
-          HoldUp introduces a high-resistance suction-based system that allows secure installation without tools or permanent modification.
-          The system is designed to:
-            - be easily installed and removed
-            - adapt to different configurations
-            - provide reliable support under load
-            - maintain a clean and non-medical aesthetic
+          HoldUp proposes a high-resistance suction-based anchoring system that can be installed without tools or permanent modification.
+          The project aims to combine safety, ease of use and a cleaner domestic aesthetic, moving away from products that feel purely clinical
+          or visually intrusive.
         </p>
         <div class="case-shot">
-          <div class="case-image" aria-label="Solution image">
-            <img class="case-image__img" src="../images/holdup/FOTOMONTAJE_BA%C3%91O.png" alt="HoldUp — solution image" loading="lazy" decoding="async">
+          <div class="case-image">
+            <img
+              class="case-image__img"
+              src="../images/holdup/holdup.0.jpg"
+              alt="HoldUp product concept render"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
@@ -115,14 +197,74 @@
 
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Why it works</h2>
+        <h2 class="case-section__title">System logic</h2>
         <p class="case-section__text">
-          HoldUp works by combining mechanical reliability with ease of use. By eliminating the need for installation tools, it lowers the barrier to adoption while enabling users to adapt their environment according to their needs.
-          Its non-invasive nature also expands its applicability across different housing conditions.
+          The strength of the proposal lies in treating the grab bar not as a single isolated object, but as part of a broader system.
+          Different lengths, placements and use situations can be considered under the same anchoring principle, allowing the solution
+          to respond to diverse bathroom layouts and user needs.
+        </p>
+        <div class="case-gallery">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/holdup/holdup.1.jpg" alt="HoldUp variation 1" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/holdup/holdup.2.jpg" alt="HoldUp variation 2" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/holdup/holdup.3.jpg" alt="HoldUp variation 3" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/holdup/holdup.4.jpg" alt="HoldUp variation 4" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-divider" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <div class="container">
+        <h2 class="case-section__title">Why it matters</h2>
+        <p class="case-section__text">
+          HoldUp is valuable because it reduces the gap between needing support and actually being able to install it.
+          By removing tools, damage and permanent intervention from the equation, the product becomes more accessible to a wider range of users,
+          living conditions and moments of need.
         </p>
         <div class="case-shot">
-          <div class="case-image" aria-label="Why it works image">
-            <img class="case-image__img" src="../images/holdup/FOTOMONTAJE-SE%C3%91ORA%20AGARRANDO.png" alt="HoldUp — image" loading="lazy" decoding="async">
+          <div class="case-image">
+            <img
+              class="case-image__img"
+              src="../images/holdup/holdup.5.jpg"
+              alt="HoldUp detail or contextual render"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-divider" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <div class="container">
+        <h2 class="case-section__title">Development criteria</h2>
+        <p class="case-section__text">
+          The project is guided by three key criteria: reliable load resistance, easy placement and removal, and a visual language that feels domestic rather than medical.
+          These criteria shape both the engineering logic and the user experience of the system.
+        </p>
+        <div class="case-gallery">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/holdup/holdup.6.jpg" alt="HoldUp development render 1" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/holdup/holdup.7.jpg" alt="HoldUp development render 2" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/holdup/holdup.8.jpg" alt="HoldUp development render 3" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/holdup/holdup.9.jpg" alt="HoldUp development render 4" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -134,14 +276,9 @@
       <div class="container">
         <h2 class="case-section__title">Next steps</h2>
         <p class="case-section__text">
-          Define load targets and test protocol, validate long-term adhesion on common surfaces, and refine materials for durability
-          and easy cleaning.
+          The next phase is to define load targets and testing protocols, validate long-term adhesion on common bathroom surfaces,
+          and refine materials and finishes for durability, hygiene and ease of cleaning.
         </p>
-        <div class="case-shot">
-          <div class="case-image" aria-label="Next steps image">
-            <img class="case-image__img" src="../images/holdup/FOTOMONTAJE-SE%C3%91OR%20AGARRANDO.png" alt="HoldUp — image" loading="lazy" decoding="async">
-          </div>
-        </div>
       </div>
     </section>
 
@@ -154,13 +291,29 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__text">© <span id="year"></span> LMZ</p>
-      <a class="footer__top" href="../index.html#work">Back to work ↑</a>
+  <footer class="footer footer--full">
+    <div class="footer__cta-band">
+      <div class="container">
+        <p class="footer__cta-text">
+          <span data-i18n="footer_cta">Open to new projects —</span>
+          <a class="footer__cta-link" href="../contact.html" data-i18n="footer_cta_link">Let's talk</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__main">
+      <div class="container footer__inner">
+        <p class="footer__copy">© <span id="year"></span> Lucía Marchesi Zorzi</p>
+        <div class="footer__links">
+          <a class="footer__link" href="mailto:luciamarchesi0@gmail.com">Email</a>
+          <a class="footer__link" href="https://www.linkedin.com/in/l-marchesi/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="footer__link" href="https://www.instagram.com/lumarchesi.di/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+        <a class="footer__top" href="#top" data-i18n="footer_back">Back to top ↑</a>
+      </div>
     </div>
   </footer>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="../script.js"></script>
 </body>
 </html>
