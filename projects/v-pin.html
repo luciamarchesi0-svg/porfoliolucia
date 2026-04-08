@@ -1,10 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>V-Pin — Case Study</title>
-  <meta name="description" content="V-Pin — case study." />
+
+  <!-- SEO -->
+  <title>V-Pin — Final Degree Project | Lucía Marchesi Zorzi</title>
+  <meta name="description" content="V-Pin: a visual assistance device developed as a final degree project to improve accessible transit through obstacle detection and voice guidance." />
+  <meta name="author" content="Lucía Marchesi Zorzi" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://luciamarchesizorzi.com/projects/v-pin.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="V-Pin — Final Degree Project | Lucía Marchesi Zorzi" />
+  <meta property="og:description" content="A visual assistance device developed as a final degree project to improve accessible transit through obstacle detection and voice guidance." />
+  <meta property="og:url" content="https://luciamarchesizorzi.com/projects/v-pin.html" />
+  <meta property="og:image" content="https://luciamarchesizorzi.com/images/vpin/vpin.0.jpg" />
+  <meta property="og:image:alt" content="V-Pin project hero image" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Lucía Marchesi Zorzi" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="V-Pin — Final Degree Project | Lucía Marchesi Zorzi" />
+  <meta name="twitter:description" content="A visual assistance device developed as a final degree project to improve accessible transit through obstacle detection and voice guidance." />
+  <meta name="twitter:image" content="https://luciamarchesizorzi.com/images/vpin/vpin.0.jpg" />
+  <meta name="twitter:image:alt" content="V-Pin project hero image" />
+
   <link rel="stylesheet" href="../styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,48 +37,84 @@
 </head>
 
 <body>
-  <header class="case-top">
-    <div class="container">
-      <a class="case-back" href="../index.html#work">Back</a>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="../index.html" aria-label="Home">
+        <span class="brand__mark">LMZ</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="../index.html#work" data-i18n="nav_work">Work</a>
+        <a class="nav__link" href="../practice.html" data-i18n="nav_practice">Practice</a>
+        <a class="nav__link" href="../about.html" data-i18n="nav_about">About</a>
+        <a class="nav__link" href="../contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="header__right">
+        <div class="lang" aria-label="Language toggle">
+          <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
+          <span class="lang__sep">|</span>
+          <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+        </div>
+
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
     </div>
+
+    <div class="header__rule" aria-hidden="true"></div>
   </header>
 
-  <main>
+  <div id="mobileMenu" class="mobileMenu" hidden>
+    <nav class="mobileMenu__nav" aria-label="Mobile">
+      <a class="mobileMenu__link" href="../index.html#work" data-i18n="nav_work">Work</a>
+      <a class="mobileMenu__link" href="../practice.html" data-i18n="nav_practice">Practice</a>
+      <a class="mobileMenu__link" href="../about.html" data-i18n="nav_about">About</a>
+      <a class="mobileMenu__link" href="../contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+  </div>
+
+  <main id="top">
     <section class="case-media">
       <div class="container">
-        <div class="case-image" aria-label="Project image">
-          <div class="case-image__placeholder" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-          </div>
+        <div class="case-image">
+          <img
+            class="case-image__img"
+            src="../images/vpin/vpin.0.jpg"
+            alt="V-Pin hero image"
+            loading="eager"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
 
     <section class="case-titleBlock">
       <div class="container">
-        <p class="case-kicker">MASTER THESIS · PRODUCT SYSTEM — 2024</p>
+        <p class="case-kicker">FINAL DEGREE PROJECT · ACCESSIBLE MOBILITY · ASSISTIVE DEVICE</p>
         <h1 class="case-title">V-Pin</h1>
 
         <div class="case-meta">
           <div>
-            <p class="case-meta__label">Summary</p>
-            <p class="case-meta__value">Replace with 1–2 lines: what V-Pin is and the core outcome.</p>
+            <p class="case-meta__label">Type</p>
+            <p class="case-meta__value">Visual assistance device · Final degree project</p>
+          </div>
+          <div>
+            <p class="case-meta__label">Context</p>
+            <p class="case-meta__value">Developed through research, iteration and exchange with Instituto Julián Vaquero</p>
           </div>
           <div>
             <p class="case-meta__label">Focus</p>
-            <p class="case-meta__value">[e.g., system design · validation · manufacturing]</p>
+            <p class="case-meta__value">Accessible transit · Obstacle detection · Product-system thinking</p>
           </div>
           <div>
-            <p class="case-meta__label">Role</p>
-            <p class="case-meta__value">[your role]</p>
-          </div>
-          <div>
-            <p class="case-meta__label">Tools</p>
-            <p class="case-meta__value">[tools]</p>
+            <p class="case-meta__label">Summary</p>
+            <p class="case-meta__value">
+              V-Pin is a visual assistance device designed to improve accessible transit. It detects obstacles in the user’s path through a distance sensor and a camera capable of identifying the type of obstacle, then communicates that information through voice commands. Developed as my final degree project, it brings together research, technical development and user-centred decision-making in one compact system.
+            </p>
           </div>
         </div>
       </div>
@@ -63,8 +124,21 @@
 
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Overview</h2>
-        <p class="case-section__text">Replace with a short paragraph: the problem, your approach, and the outcome.</p>
+        <h2 class="case-section__title">Project overview</h2>
+        <p class="case-section__text">
+          V-Pin was conceived as a device for safer and more autonomous transit for people with low vision. The project moves beyond static accessibility aids and focuses on mobility in motion: detecting obstacles, interpreting the environment and translating spatial information into immediate verbal guidance. More than a single object, it is a proposal about how assistive technology can be more integrated, understandable and usable in everyday life.
+        </p>
+        <div class="case-shot">
+          <div class="case-image">
+            <img
+              class="case-image__img"
+              src="../images/vpin/vpin.1.jpg"
+              alt="V-Pin overview image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -72,8 +146,18 @@
 
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Problem</h2>
-        <p class="case-section__text">Replace: what needed to change, and why it mattered.</p>
+        <h2 class="case-section__title">The challenge</h2>
+        <p class="case-section__text">
+          The starting point of the project was the need to rethink accessible mobility from a product design perspective. Instead of focusing only on reading or object recognition, V-Pin addresses the problem of moving through space safely and independently. This meant designing not only for detection, but also for clarity, reaction time, portability and confidence in use.
+        </p>
+        <div class="case-gallery">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.2.jpg" alt="V-Pin context image 1" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.3.jpg" alt="V-Pin context image 2" loading="lazy" decoding="async" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -81,8 +165,21 @@
 
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Solution</h2>
-        <p class="case-section__text">Replace: what you designed, how it works, what’s different.</p>
+        <h2 class="case-section__title">How it works</h2>
+        <p class="case-section__text">
+          V-Pin combines a distance sensor and a camera module to detect obstacles and identify their type. This information is then translated into voice commands, creating a direct communication channel between the device and the user. According to the final synthesis boards, the system integrates an ArduCam 2640 and a LiDAR VL53L1X sensor, enabling focal distance, angle of vision, depth reading and a detection range of up to 4 metres. :contentReference[oaicite:0]{index=0}
+        </p>
+        <div class="case-shot">
+          <div class="case-image">
+            <img
+              class="case-image__img"
+              src="../images/vpin/vpin.4.jpg"
+              alt="V-Pin operation and technology image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -90,8 +187,155 @@
 
     <section class="case-section">
       <div class="container">
-        <h2 class="case-section__title">Why it works</h2>
-        <p class="case-section__text">Replace: constraints, tests, decisions, and evidence.</p>
+        <h2 class="case-section__title">Design decisions</h2>
+        <p class="case-section__text">
+          One of the core design decisions was to avoid making the device feel oversized, cumbersome or visually intimidating. The proposal was developed as a compact, modular and lightweight object, designed to improve comfort and ease of use. The final presentation boards highlight this intention through decisions such as internal magnets that allow both modules to attach quickly and securely into a single unit, making storage and transport easier. They also describe the device as weighing 95 g less than a cellphone, reinforcing the emphasis on portability. :contentReference[oaicite:1]{index=1}
+        </p>
+        <div class="case-gallery">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.5.jpg" alt="V-Pin design decision image 1" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.6.jpg" alt="V-Pin design decision image 2" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-divider" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <div class="container">
+        <h2 class="case-section__title">Technical development</h2>
+        <p class="case-section__text">
+          V-Pin was developed with attention to both performance and feasibility. The technical proposal includes voice alert output through speakers, battery autonomy of 8 continuous hours and up to 12 maximum, ABS housings, and a manufacturing logic based on plastic injection and laser cutting for standardised parts. The internal architecture shown in the final boards also reveals a careful organisation of components such as speakers, processor, interface, camera, LiDAR sensor, screws and magnets, showing that the project was resolved as a system rather than as a surface-level concept. :contentReference[oaicite:2]{index=2} :contentReference[oaicite:3]{index=3}
+        </p>
+        <div class="case-gallery">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.7.jpg" alt="V-Pin technical development image 1" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.8.jpg" alt="V-Pin technical development image 2" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-divider" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <div class="container">
+        <h2 class="case-section__title">Context and validation</h2>
+        <p class="case-section__text">
+          A fundamental part of the project involved connecting the development process with a real accessibility context through the people at Instituto Julián Vaquero. That dimension helped ground the project beyond formal speculation, pushing the proposal to respond to actual use conditions, communication needs and user expectations. This made the decision-making process more rigorous, because each adjustment had to make sense not only technically, but also in relation to real experience.
+        </p>
+        <div class="case-shot">
+          <div class="case-image">
+            <img
+              class="case-image__img"
+              src="../images/vpin/vpin.9.jpg"
+              alt="V-Pin validation and context image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-divider" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <div class="container">
+        <h2 class="case-section__title">Positioning and proposal</h2>
+        <p class="case-section__text">
+          The project also explored the proposal from a strategic angle. The final synthesis material presents V-Pin as a product positioned between an existing market focused on reading assistance and a newer opportunity centred on transit, with the ambition of expanding the accessible technology landscape. It also outlines estimated manufacturing cost at U$ 152 and frames the device as a competitive product with potential in both national and international markets. :contentReference[oaicite:4]{index=4}
+        </p>
+        <div class="case-shot">
+          <div class="case-image">
+            <img
+              class="case-image__img"
+              src="../images/vpin/vpin.10.jpg"
+              alt="V-Pin positioning image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-divider" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <div class="container">
+        <h2 class="case-section__title">Project documents</h2>
+        <p class="case-section__text">
+          Because V-Pin was developed as a final degree project, the outcome includes not only the final product proposal but also a full set of supporting documents. These materials expand the project beyond the portfolio page and show the depth of the process, from communication and technical reasoning to final presentation.
+        </p>
+
+        <div class="case-links">
+          <a class="btn btn--ghost" href="../images/vpin/vpin-laminas-sintesis.pdf" target="_blank" rel="noreferrer">View synthesis boards</a>
+          <a class="btn btn--ghost" href="../images/vpin/vpin-monografia.pdf" target="_blank" rel="noreferrer">View monograph</a>
+          <a class="btn btn--ghost" href="../images/vpin/vpin-manual-uso.pdf" target="_blank" rel="noreferrer">View user manual</a>
+          <a class="btn btn--ghost" href="../images/vpin/vpin-maqueta-final.pdf" target="_blank" rel="noreferrer">View final model</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-divider" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <div class="container">
+        <h2 class="case-section__title">Project video</h2>
+        <p class="case-section__text">
+          The audiovisual material complements the project by showing the device, its logic and its presentation in motion. For a product like V-Pin, video helps communicate interaction, scale and use much more clearly than static images alone.
+        </p>
+
+        <div class="case-video">
+          <video controls playsinline preload="metadata" class="case-video__media">
+            <source src="../images/vpin/vpin-resumen.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="case-links" style="margin-top: 24px;">
+          <a class="btn btn--ghost" href="../images/vpin/vpin-presentacion.mp4" target="_blank" rel="noreferrer">Open presentation video</a>
+          <a class="btn btn--ghost" href="../images/vpin/vpin-simulacion-ensamble.mp4" target="_blank" rel="noreferrer">Open assembly simulation</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-divider" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <div class="container">
+        <h2 class="case-section__title">Gallery</h2>
+        <div class="case-gallery">
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.11.jpg" alt="V-Pin gallery image 1" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.3.jpg" alt="V-Pin gallery image 2" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.6.jpg" alt="V-Pin gallery image 3" loading="lazy" decoding="async" />
+          </div>
+          <div class="case-image">
+            <img class="case-image__img" src="../images/vpin/vpin.8.jpg" alt="V-Pin gallery image 4" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-divider" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <div class="container">
+        <h2 class="case-section__title">Reflection</h2>
+        <p class="case-section__text">
+          V-Pin represents a moment where research, technological integration and design judgement came together with unusual clarity. As a final degree project, it was not only about arriving at a resolved object, but about demonstrating the ability to frame a problem, develop criteria, make decisions and communicate a complete proposal. That is what gives the project its weight within my portfolio.
+        </p>
       </div>
     </section>
 
@@ -104,13 +348,29 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__text">© <span id="year"></span> LMZ</p>
-      <a class="footer__top" href="../index.html#work">Back to work ↑</a>
+  <footer class="footer footer--full">
+    <div class="footer__cta-band">
+      <div class="container">
+        <p class="footer__cta-text">
+          <span data-i18n="footer_cta">Open to new projects —</span>
+          <a class="footer__cta-link" href="../contact.html" data-i18n="footer_cta_link">Let's talk</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__main">
+      <div class="container footer__inner">
+        <p class="footer__copy">© <span id="year"></span> Lucía Marchesi Zorzi</p>
+        <div class="footer__links">
+          <a class="footer__link" href="mailto:luciamarchesesi0@gmail.com">Email</a>
+          <a class="footer__link" href="https://www.linkedin.com/in/l-marchesi/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="footer__link" href="https://www.instagram.com/lumarchesi.di/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+        <a class="footer__top" href="#top" data-i18n="footer_back">Back to top ↑</a>
+      </div>
     </div>
   </footer>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="../script.js"></script>
 </body>
 </html>
