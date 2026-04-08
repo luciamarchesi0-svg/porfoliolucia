@@ -1169,8 +1169,6 @@ img{ max-width: 100%; display:block; }
 
 /* Prevent scroll when menu open */
 body.menu-open{
-  position: fixed;
-  width: 100%;
   overflow: hidden;
 }
 
@@ -1553,10 +1551,6 @@ body.menu-open{
   to   { opacity: 1; transform: translateY(0); }
 }
 
-body {
-  animation: pageFadeIn 0.4s var(--ease) both;
-}
-
 .page {
   animation: pageFadeIn .5s cubic-bezier(.2,.8,.2,1) both;
 }
@@ -1862,9 +1856,6 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-main {
-  animation: pageFadeIn .5s cubic-bezier(.2,.8,.2,1) both;
-}
 .page {
   animation: pageFadeIn .5s cubic-bezier(.2,.8,.2,1) both;
 }
