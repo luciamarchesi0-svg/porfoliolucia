@@ -1557,6 +1557,10 @@ body {
   animation: pageFadeIn 0.4s var(--ease) both;
 }
 
+.page {
+  animation: pageFadeIn .5s cubic-bezier(.2,.8,.2,1) both;
+}
+
 /* ── Custom cursor (desktop only) ── */
 @media (pointer: fine) {
   body { cursor: none; }
@@ -1859,6 +1863,9 @@ body {
 }
 
 main {
+  animation: pageFadeIn .5s cubic-bezier(.2,.8,.2,1) both;
+}
+.page {
   animation: pageFadeIn .5s cubic-bezier(.2,.8,.2,1) both;
 }
 
