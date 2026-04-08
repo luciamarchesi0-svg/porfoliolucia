@@ -10,13 +10,18 @@ const burger = document.querySelector(".burger");
 const mobileMenu = document.getElementById("mobileMenu");
 
 if (burger && mobileMenu) {
-  burger.addEventListener("click", () => {
-    const isOpen = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!isOpen));
-    burger.classList.toggle("is-open", !isOpen);
-    mobileMenu.hidden = isOpen;
-    document.body.classList.toggle("menu-open", !isOpen);
-  });
+burger.addEventListener('click', () => {
+  const isOpen = burger.classList.toggle('is-open');
+
+  mobileMenu.hidden = !isOpen;
+  burger.setAttribute('aria-expanded', isOpen);
+
+  body.classList.toggle('menu-open', isOpen);
+
+  if (isOpen) {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+});
 
   mobileMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
