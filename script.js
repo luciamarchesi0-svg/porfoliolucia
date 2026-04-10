@@ -2,6 +2,7 @@
 document.querySelectorAll(".js-year").forEach(el => {
   el.textContent = new Date().getFullYear();
 });
+
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -10,18 +11,17 @@ const burger = document.querySelector(".burger");
 const mobileMenu = document.getElementById("mobileMenu");
 
 if (burger && mobileMenu) {
-burger.addEventListener('click', () => {
-  const isOpen = burger.classList.toggle('is-open');
+  burger.addEventListener("click", () => {
+    const isOpen = burger.classList.toggle("is-open");
 
-  mobileMenu.hidden = !isOpen;
-  burger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.hidden = !isOpen;
+    burger.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("menu-open", isOpen);
 
-  body.classList.toggle('menu-open', isOpen);
-
-  if (isOpen) {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }
-});
+    if (isOpen) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  });
 
   mobileMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
@@ -54,13 +54,18 @@ if (sections.length > 0 && hasHashNav) {
   const setActive = () => {
     const y = window.scrollY + 120;
     let current = null;
+
     for (const sec of sections) {
-      if (y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) current = sec.id;
+      if (y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) {
+        current = sec.id;
+      }
     }
+
     navLinks.forEach(a => {
-      a.classList.toggle("is-active", current && a.getAttribute("href") === "#" + current);
+      a.classList.toggle("is-active", !!current && a.getAttribute("href") === "#" + current);
     });
   };
+
   window.addEventListener("scroll", setActive, { passive: true });
   setActive();
 }
@@ -121,7 +126,6 @@ const dict = {
     footer_cta_link: "Let's talk",
     footer_back: "Back to top ↑",
     name_line1: "Lucía", name_line2: "Marchesi", name_line3: "Zorzi",
-    // ── AURORA ──────────────────────────────────────────────
     aurora_kicker: "LIGHTING · iSiMAR — 2025",
     aurora_title: "Aurora",
     aurora_hero_alt: "Aurora lighting family — iSiMAR",
@@ -150,7 +154,6 @@ const dict = {
     aurora_s5_alt: "Aurora — product family",
     aurora_gallery_title: "Gallery",
     aurora_g_alt: "Aurora — image",
-    // ── SAFESTEP ─────────────────────────────────────────────
     safestep_kicker: "SAFETY PRODUCT — 2025",
     safestep_title: "SafeStep",
     safestep_hero_alt: "SafeStep safety sneaker",
@@ -179,7 +182,6 @@ const dict = {
     safestep_s5_alt: "SafeStep — next steps",
     safestep_gallery_title: "Gallery",
     safestep_g_alt: "SafeStep — image",
-    // ── KYRRE SHIFT ──────────────────────────────────────────
     kyrre_kicker: "FURNITURE DESIGN — 2026",
     kyrre_title: "Kyrre Shift",
     kyrre_hero_alt: "Kyrre Shift stacked renders",
@@ -205,7 +207,6 @@ const dict = {
     kyrre_s4_alt: "Kyrre Shift — process",
     kyrre_gallery_title: "Gallery",
     kyrre_g_alt: "Kyrre Shift — image",
-    // ── HOLDUP ───────────────────────────────────────────────
     holdup_kicker: "NON-INVASIVE SAFETY SYSTEM — 2025",
     holdup_title: "HoldUp",
     holdup_hero_alt: "HoldUp bathroom safety grip",
@@ -288,7 +289,6 @@ const dict = {
     footer_cta_link: "Hablemos",
     footer_back: "Volver arriba ↑",
     name_line1: "Lucía", name_line2: "Marchesi", name_line3: "Zorzi",
-    // ── AURORA ──────────────────────────────────────────────
     aurora_kicker: "ILUMINACIÓN · iSiMAR — 2025",
     aurora_title: "Aurora",
     aurora_hero_alt: "Familia de iluminación Aurora — iSiMAR",
@@ -317,7 +317,6 @@ const dict = {
     aurora_s5_alt: "Aurora — familia de producto",
     aurora_gallery_title: "Galería",
     aurora_g_alt: "Aurora — imagen",
-    // ── SAFESTEP ─────────────────────────────────────────────
     safestep_kicker: "PRODUCTO DE SEGURIDAD — 2025",
     safestep_title: "SafeStep",
     safestep_hero_alt: "Zapatilla de seguridad SafeStep",
@@ -346,7 +345,6 @@ const dict = {
     safestep_s5_alt: "SafeStep — próximos pasos",
     safestep_gallery_title: "Galería",
     safestep_g_alt: "SafeStep — imagen",
-    // ── KYRRE SHIFT ──────────────────────────────────────────
     kyrre_kicker: "DISEÑO DE MOBILIARIO — 2026",
     kyrre_title: "Kyrre Shift",
     kyrre_hero_alt: "Kyrre Shift apilados — renders",
@@ -372,7 +370,6 @@ const dict = {
     kyrre_s4_alt: "Kyrre Shift — proceso",
     kyrre_gallery_title: "Galería",
     kyrre_g_alt: "Kyrre Shift — imagen",
-    // ── HOLDUP ───────────────────────────────────────────────
     holdup_kicker: "SISTEMA DE SEGURIDAD NO INVASIVO — 2025",
     holdup_title: "HoldUp",
     holdup_hero_alt: "Sistema de agarre de baño HoldUp",
@@ -410,19 +407,21 @@ function applyLang(lang) {
   sessionStorage.setItem("lmz-lang", lang);
   document.documentElement.setAttribute("lang", lang);
   document.documentElement.dataset.lang = lang;
+
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.dataset.i18n;
     if (dict[lang] && dict[lang][key] !== undefined) {
       el.innerHTML = dict[lang][key].replace(/\n/g, "<br>");
     }
   });
-  // Also update image alt attributes
+
   document.querySelectorAll("[data-i18n-alt]").forEach(el => {
     const key = el.dataset.i18nAlt;
     if (dict[lang] && dict[lang][key] !== undefined) {
       el.alt = dict[lang][key];
     }
   });
+
   document.querySelectorAll("[data-lang-btn]").forEach(btn => {
     btn.classList.toggle("is-active", btn.dataset.langBtn === lang);
   });
@@ -436,12 +435,14 @@ applyLang(currentLang);
 
 // ====== Scroll Reveal ======
 const revealItems = document.querySelectorAll(".projectCard, .js-reveal");
+
 if (revealItems.length > 0) {
   revealItems.forEach(el => {
     el.style.opacity = "0";
     el.style.transform = "translateY(28px)";
     el.style.transition = "opacity 0.55s ease, transform 0.55s var(--ease)";
   });
+
   const ro = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -451,6 +452,7 @@ if (revealItems.length > 0) {
       }
     });
   }, { threshold: 0.12 });
+
   revealItems.forEach(el => ro.observe(el));
 }
 
@@ -461,28 +463,27 @@ if (window.matchMedia("(pointer: fine)").matches) {
   cursorEl.innerHTML = '<div class="cursor__dot"></div><div class="cursor__ring"></div>';
   document.body.appendChild(cursorEl);
 
-  const dot  = cursorEl.querySelector(".cursor__dot");
+  const dot = cursorEl.querySelector(".cursor__dot");
   const ring = cursorEl.querySelector(".cursor__ring");
 
   let mx = -100, my = -100;
   let rx = -100, ry = -100;
 
   document.addEventListener("mousemove", e => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left  = mx + "px";
-    dot.style.top   = my + "px";
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.left = mx + "px";
+    dot.style.top = my + "px";
   });
 
-  // Ring follows with lag
   (function lerp() {
     rx += (mx - rx) * 0.12;
     ry += (my - ry) * 0.12;
     ring.style.left = rx + "px";
-    ring.style.top  = ry + "px";
+    ring.style.top = ry + "px";
     requestAnimationFrame(lerp);
   })();
 
-  // Hover detection
   const hoverTargets = "a, button, .projectCard, .about-tool, .nav__link";
   document.addEventListener("mouseover", e => {
     if (e.target.closest(hoverTargets)) document.body.classList.add("cursor-hover");
@@ -493,19 +494,23 @@ if (window.matchMedia("(pointer: fine)").matches) {
 }
 
 // ====== Page transition on link click ======
-(function() {
+(function () {
   function isSameSite(href) {
     if (!href) return false;
     if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return false;
+
     try {
       const url = new URL(href, location.href);
       return url.hostname === location.hostname;
-    } catch { return false; }
+    } catch {
+      return false;
+    }
   }
 
   document.addEventListener("click", e => {
     const link = e.target.closest("a[href]");
     if (!link) return;
+
     const href = link.getAttribute("href");
     if (!isSameSite(href)) return;
     if (link.hasAttribute("download")) return;
@@ -514,20 +519,26 @@ if (window.matchMedia("(pointer: fine)").matches) {
     e.preventDefault();
     document.body.style.opacity = "0";
     document.body.style.transition = "opacity 0.25s ease";
-    setTimeout(() => { location.href = href; }, 260);
+
+    setTimeout(() => {
+      location.href = href;
+    }, 260);
   });
 })();
 
 // ====== Page exit transition ======
-// Adds a soft fade-out before navigating to internal links
-(function() {
-  // Create overlay element
+(function () {
   const overlay = document.createElement("div");
   overlay.style.cssText = [
-    "position:fixed","inset:0","z-index:9999",
-    "background:var(--bg)","opacity:0","pointer-events:none",
+    "position:fixed",
+    "inset:0",
+    "z-index:9999",
+    "background:var(--bg)",
+    "opacity:0",
+    "pointer-events:none",
     "transition:opacity .28s ease"
   ].join(";");
+
   document.body.appendChild(overlay);
 
   document.addEventListener("click", e => {
@@ -535,7 +546,7 @@ if (window.matchMedia("(pointer: fine)").matches) {
     if (!link) return;
 
     const href = link.getAttribute("href");
-    // Only intercept internal non-anchor links
+
     if (
       !href ||
       href.startsWith("#") ||
@@ -554,12 +565,11 @@ if (window.matchMedia("(pointer: fine)").matches) {
     }, 280);
   });
 
-  // Fade overlay out on arrival (bfcache / back-forward)
   window.addEventListener("pageshow", () => {
     overlay.style.transition = "none";
     overlay.style.opacity = "0";
     overlay.style.pointerEvents = "none";
-    // Re-enable transition after reset
+
     requestAnimationFrame(() => {
       overlay.style.transition = "opacity .28s ease";
     });
