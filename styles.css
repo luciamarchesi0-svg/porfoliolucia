@@ -334,7 +334,7 @@ img{ max-width: 100%; display:block; }
   display: flex;
   align-items: center;          /* keeps content nicely centered vertically */
   overflow: hidden;
-  background: linear-gradient(to right, #f6f4f1 50%, #f2f4f6 50%);
+  background: var(--bg);
 }
 
 .hero__grid--bg{
