@@ -2004,3 +2004,71 @@ html, body, a, button, .btn, .nav__link, .lang__btn, .projectCard {
 .btn--ghost:focus-visible .btn__arrow{
   color: #fff;
 }
+
+/* =========================
+   3D PRINTING — GALLERIES
+   ========================= */
+
+.marquee-gallery{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 32px 0;
+}
+
+.marquee-gallery__track{
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-gallery__img{
+  height: 280px;
+  width: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform .4s cubic-bezier(.2,.8,.2,1);
+}
+
+/* Hover suave (queda muy pro) */
+.marquee-gallery__img:hover{
+  transform: scale(1.04);
+}
+
+/* Pausa cuando el mouse está encima */
+.marquee-gallery:hover .marquee-gallery__track{
+  animation-play-state: paused;
+}
+
+/* Animación */
+@keyframes marqueeScroll{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-gallery::before,
+.marquee-gallery::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:80px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.marquee-gallery::before{
+  left:0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.marquee-gallery::after{
+  right:0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
