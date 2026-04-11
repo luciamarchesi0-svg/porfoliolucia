@@ -1160,6 +1160,61 @@ img{ max-width: 100%; display:block; }
 }
 
 body.menu-open{
+  overflow: hidden;
+}
+
+body.menu-open .page{
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+@media (max-width: 820px){
+  .burger{
+    display: flex;
+  }
+
+  .nav{
+    display: none;
+  }
+
+  .header__right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header{
+    position: sticky;
+    top: 0;
+    z-index: 120;
+    background: rgba(246,244,241,.92);
+    backdrop-filter: blur(8px);
+  }
+}
+
+.mobileMenu__link{
+  display: block;
+  width: 100%;
+  padding: 28px 0;
+  text-decoration: none;
+  color: rgba(30,30,30,.35);
+  font-family: var(--font-title);
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  border: none;
+  transition: color .25s ease;
+}
+
+.mobileMenu__link:hover,
+.mobileMenu__link:active{
+  color: var(--ink);
+}
+
+body.menu-open{
   position: fixed;
   overflow: hidden;
 }
