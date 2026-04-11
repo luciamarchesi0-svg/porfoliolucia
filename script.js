@@ -6,42 +6,41 @@ document.querySelectorAll(".js-year").forEach(el => {
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ====== Hamburger menu ======
+// ====== Burger Menu (Mobile) ======
 const burger = document.querySelector(".burger");
 const mobileMenu = document.getElementById("mobileMenu");
-
+const mobileLinks = document.querySelectorAll(".mobileMenu__link");
+ 
 if (burger && mobileMenu) {
+  // Toggle menu when burger is clicked
   burger.addEventListener("click", () => {
-    const isOpen = burger.classList.toggle("is-open");
-
-    mobileMenu.hidden = !isOpen;
-    burger.setAttribute("aria-expanded", String(isOpen));
-    document.body.classList.toggle("menu-open", isOpen);
-
-    if (isOpen) {
-      window.scrollTo({ top: 0, behavior: "auto" });
+    const isHidden = mobileMenu.hasAttribute("hidden");
+    if (isHidden) {
+      mobileMenu.removeAttribute("hidden");
+      burger.classList.add("is-active");
+    } else {
+      mobileMenu.setAttribute("hidden", "");
+      burger.classList.remove("is-active");
     }
   });
-
-  mobileMenu.querySelectorAll("a").forEach(link => {
+ 
+  // Close menu when a link is clicked
+  mobileLinks.forEach(link => {
     link.addEventListener("click", () => {
-      burger.setAttribute("aria-expanded", "false");
-      burger.classList.remove("is-open");
-      mobileMenu.hidden = true;
-      document.body.classList.remove("menu-open");
+      mobileMenu.setAttribute("hidden", "");
+      burger.classList.remove("is-active");
     });
   });
-
-  document.addEventListener("click", e => {
+ 
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
     if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
-      burger.setAttribute("aria-expanded", "false");
-      burger.classList.remove("is-open");
-      mobileMenu.hidden = true;
-      document.body.classList.remove("menu-open");
+      mobileMenu.setAttribute("hidden", "");
+      burger.classList.remove("is-active");
     }
   });
 }
-
+ 
 // ====== Active nav link on scroll (index only) ======
 const sections = ["work", "practice", "about", "contact"]
   .map(id => document.getElementById(id))
