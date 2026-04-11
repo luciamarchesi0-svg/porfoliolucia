@@ -1078,10 +1078,6 @@ img{ max-width: 100%; display:block; }
   }
 }
 
-
-
-
-
 /* ===== MOBILE MENU (Full Screen) ===== */
 .burger{
   display: none;
@@ -1094,6 +1090,7 @@ img{ max-width: 100%; display:block; }
   width: 24px;
   height: 24px;
   z-index: 11;
+  position: relative;
 }
  
 .burger__line{
@@ -1129,10 +1126,13 @@ img{ max-width: 100%; display:block; }
   padding: var(--header-h) 0 0 0;
   overflow-y: auto;
   animation: slideDown .3s ease;
+  width: 100%;
+  height: 100vh;
 }
  
 .mobileMenu[hidden]{
   display: none !important;
+  visibility: hidden;
 }
  
 @keyframes slideDown {
@@ -1149,13 +1149,14 @@ img{ max-width: 100%; display:block; }
   flex-direction: column;
   gap: 0;
   padding: 60px 24px;
+  width: 100%;
 }
  
 .mobileMenu__link{
   display: block;
   padding: 28px 0;
   text-decoration: none;
-  color: var(--ink);
+  color: rgba(30,30,30,.35);
   font-family: var(--font-title);
   font-size: 44px;
   font-weight: 700;
@@ -1165,8 +1166,9 @@ img{ max-width: 100%; display:block; }
   border: none;
 }
  
-.mobileMenu__link:hover{
-  color: rgba(30,30,30,.6);
+.mobileMenu__link:hover,
+.mobileMenu__link:active{
+  color: var(--ink);
 }
  
 /* Show burger on mobile, hide desktop nav */
@@ -1184,9 +1186,13 @@ img{ max-width: 100%; display:block; }
     align-items: center;
     gap: 20px;
   }
+ 
+  .header{
+    z-index: 12;
+    position: relative;
+  }
 }
  
-
 /* ==============================================
    NEW: Footer redesign
    ============================================== */
