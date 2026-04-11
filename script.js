@@ -13,14 +13,17 @@ const mobileLinks = document.querySelectorAll(".mobileMenu__link");
  
 if (burger && mobileMenu) {
   // Toggle menu when burger is clicked
-  burger.addEventListener("click", () => {
+  burger.addEventListener("click", (e) => {
+    e.stopPropagation();
     const isHidden = mobileMenu.hasAttribute("hidden");
     if (isHidden) {
       mobileMenu.removeAttribute("hidden");
       burger.classList.add("is-active");
+      document.body.style.overflow = "hidden"; // Prevent scroll when menu is open
     } else {
       mobileMenu.setAttribute("hidden", "");
       burger.classList.remove("is-active");
+      document.body.style.overflow = ""; // Restore scroll
     }
   });
  
@@ -29,18 +32,21 @@ if (burger && mobileMenu) {
     link.addEventListener("click", () => {
       mobileMenu.setAttribute("hidden", "");
       burger.classList.remove("is-active");
+      document.body.style.overflow = ""; // Restore scroll
     });
   });
  
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
+  // Close menu when clicking outside (on the menu overlay)
+  mobileMenu.addEventListener("click", (e) => {
+    // Only close if clicking on the menu itself, not its children
+    if (e.target === mobileMenu) {
       mobileMenu.setAttribute("hidden", "");
       burger.classList.remove("is-active");
+      document.body.style.overflow = ""; // Restore scroll
     }
   });
 }
- 
+
 // ====== Active nav link on scroll (index only) ======
 const sections = ["work", "practice", "about", "contact"]
   .map(id => document.getElementById(id))
