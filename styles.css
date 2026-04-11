@@ -1117,31 +1117,21 @@ img{ max-width: 100%; display:block; }
 /* Full-screen mobile menu panel */
 .mobileMenu{
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: var(--bg);
   z-index: 1000;
-  width: 100%;
-  height: 100vh;
   overflow-y: auto;
-  animation: slideDown .3s ease;
+  transform: translateX(100%);
+  transition: transform .3s ease;
+  width: 100%;
+}
+ 
+.mobileMenu:not([hidden]){
+  transform: translateX(0);
 }
  
 .mobileMenu[hidden]{
-  display: none !important;
-  visibility: hidden;
-  pointer-events: none;
-}
- 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  display: none;
 }
  
 .mobileMenu__nav{
@@ -1150,7 +1140,6 @@ img{ max-width: 100%; display:block; }
   gap: 0;
   padding: var(--header-h) 24px 60px 24px;
   width: 100%;
-  min-height: 100vh;
 }
  
 .mobileMenu__link{
@@ -1197,7 +1186,7 @@ img{ max-width: 100%; display:block; }
     backdrop-filter: blur(8px);
   }
 }
- 
+
 /* ==============================================
    NEW: Footer redesign
    ============================================== */
