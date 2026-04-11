@@ -10,39 +10,55 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const burger = document.querySelector(".burger");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileLinks = document.querySelectorAll(".mobileMenu__link");
- 
+
 if (burger && mobileMenu) {
-  // Toggle menu when burger is clicked
-  burger.addEventListener("click", (e) => {
+  const openMenu = () => {
+    mobileMenu.removeAttribute("hidden");
+    burger.classList.add("is-active");
+    burger.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-open");
+  };
+
+  const closeMenu = () => {
+    mobileMenu.setAttribute("hidden", "");
+    burger.classList.remove("is-active");
+    burger.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+  };
+
+  const toggleMenu = (e) => {
     e.stopPropagation();
-    const isHidden = mobileMenu.hasAttribute("hidden");
-    if (isHidden) {
-      mobileMenu.removeAttribute("hidden");
-      burger.classList.add("is-active");
-      document.body.style.overflow = "hidden"; // Prevent scroll when menu is open
+    const isOpen = !mobileMenu.hasAttribute("hidden");
+    if (isOpen) {
+      closeMenu();
     } else {
-      mobileMenu.setAttribute("hidden", "");
-      burger.classList.remove("is-active");
-      document.body.style.overflow = ""; // Restore scroll
+      openMenu();
     }
-  });
- 
-  // Close menu when a link is clicked
+  };
+
+  burger.addEventListener("click", toggleMenu);
+
   mobileLinks.forEach(link => {
     link.addEventListener("click", () => {
-      mobileMenu.setAttribute("hidden", "");
-      burger.classList.remove("is-active");
-      document.body.style.overflow = ""; // Restore scroll
+      closeMenu();
     });
   });
- 
-  // Close menu when clicking outside (on the menu overlay)
+
   mobileMenu.addEventListener("click", (e) => {
-    // Only close if clicking on the menu itself, not its children
     if (e.target === mobileMenu) {
-      mobileMenu.setAttribute("hidden", "");
-      burger.classList.remove("is-active");
-      document.body.style.overflow = ""; // Restore scroll
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !mobileMenu.hasAttribute("hidden")) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      closeMenu();
     }
   });
 }
