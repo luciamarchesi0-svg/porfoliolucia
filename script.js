@@ -16,19 +16,14 @@ if (burger && mobileMenu) {
   burger.addEventListener("click", (e) => {
     e.stopPropagation();
     const isHidden = mobileMenu.hasAttribute("hidden");
-    
     if (isHidden) {
-      // Open menu
       mobileMenu.removeAttribute("hidden");
       burger.classList.add("is-active");
-      burger.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"; // Prevent scroll when menu is open
     } else {
-      // Close menu
       mobileMenu.setAttribute("hidden", "");
       burger.classList.remove("is-active");
-      burger.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
+      document.body.style.overflow = ""; // Restore scroll
     }
   });
  
@@ -37,23 +32,21 @@ if (burger && mobileMenu) {
     link.addEventListener("click", () => {
       mobileMenu.setAttribute("hidden", "");
       burger.classList.remove("is-active");
-      burger.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
+      document.body.style.overflow = ""; // Restore scroll
     });
   });
  
-  // Close menu when pressing ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !mobileMenu.hasAttribute("hidden")) {
+  // Close menu when clicking outside (on the menu overlay)
+  mobileMenu.addEventListener("click", (e) => {
+    // Only close if clicking on the menu itself, not its children
+    if (e.target === mobileMenu) {
       mobileMenu.setAttribute("hidden", "");
       burger.classList.remove("is-active");
-      burger.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
+      document.body.style.overflow = ""; // Restore scroll
     }
   });
 }
- 
- 
+
 // ====== Active nav link on scroll (index only) ======
 const sections = ["work", "practice", "about", "contact"]
   .map(id => document.getElementById(id))
