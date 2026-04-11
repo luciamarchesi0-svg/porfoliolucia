@@ -12,19 +12,25 @@ const mobileMenu = document.getElementById("mobileMenu");
 const mobileLinks = document.querySelectorAll(".mobileMenu__link");
 
 if (burger && mobileMenu) {
-  const openMenu = () => {
-    mobileMenu.removeAttribute("hidden");
-    burger.classList.add("is-active");
-    burger.setAttribute("aria-expanded", "true");
-    document.body.classList.add("menu-open");
-  };
+let scrollY = 0;
 
-  const closeMenu = () => {
-    mobileMenu.setAttribute("hidden", "");
-    burger.classList.remove("is-active");
-    burger.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("menu-open");
-  };
+const openMenu = () => {
+  scrollY = window.scrollY;
+  mobileMenu.removeAttribute("hidden");
+  burger.classList.add("is-active");
+  burger.setAttribute("aria-expanded", "true");
+  document.body.classList.add("menu-open");
+  document.body.style.top = `-${scrollY}px`;
+};
+
+const closeMenu = () => {
+  mobileMenu.setAttribute("hidden", "");
+  burger.classList.remove("is-active");
+  burger.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
+  document.body.style.top = "";
+  window.scrollTo(0, scrollY);
+};
 
   const toggleMenu = (e) => {
     e.stopPropagation();
