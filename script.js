@@ -19,34 +19,53 @@ if (burger && mobileMenu) {
     if (isHidden) {
       mobileMenu.removeAttribute("hidden");
       burger.classList.add("is-active");
-      document.body.style.overflow = "hidden"; // Prevent scroll when menu is open
+      burger.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
     } else {
       mobileMenu.setAttribute("hidden", "");
       burger.classList.remove("is-active");
-      document.body.style.overflow = ""; // Restore scroll
+      burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
     }
   });
  
   // Close menu when a link is clicked
   mobileLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      mobileMenu.setAttribute("hidden", "");
-      burger.classList.remove("is-active");
-      document.body.style.overflow = ""; // Restore scroll
+    link.addEventListener("click", (e) => {
+      // Only close if it's NOT an anchor to the current page
+      const href = link.getAttribute("href");
+      if (!href.startsWith("#")) {
+        mobileMenu.setAttribute("hidden", "");
+        burger.classList.remove("is-active");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
     });
   });
  
-  // Close menu when clicking outside (on the menu overlay)
-  mobileMenu.addEventListener("click", (e) => {
-    // Only close if clicking on the menu itself, not its children
-    if (e.target === mobileMenu) {
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      if (!mobileMenu.hasAttribute("hidden")) {
+        mobileMenu.setAttribute("hidden", "");
+        burger.classList.remove("is-active");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+    }
+  });
+ 
+  // Close menu on ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !mobileMenu.hasAttribute("hidden")) {
       mobileMenu.setAttribute("hidden", "");
       burger.classList.remove("is-active");
-      document.body.style.overflow = ""; // Restore scroll
+      burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
     }
   });
 }
-
+ 
 // ====== Active nav link on scroll (index only) ======
 const sections = ["work", "practice", "about", "contact"]
   .map(id => document.getElementById(id))
