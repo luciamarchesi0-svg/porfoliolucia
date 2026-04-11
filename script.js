@@ -10,48 +10,29 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const burger = document.querySelector(".burger");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileLinks = document.querySelectorAll(".mobileMenu__link");
+const page = document.querySelector(".page");
 
-if (burger && mobileMenu) {
+if (burger && mobileMenu && page) {
   let scrollY = 0;
   let isMenuOpen = false;
 
-  const getScrollbarWidth = () => {
-    return window.innerWidth - document.documentElement.clientWidth;
-  };
-
-  const lockScroll = () => {
-    scrollY = window.scrollY || window.pageYOffset;
-    const scrollbarWidth = getScrollbarWidth();
-
-    document.body.classList.add("menu-open");
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
-
-    if (scrollbarWidth > 0) {
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
+  const openMenu = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
     }
-  };
 
-  const unlockScroll = () => {
-    document.body.classList.remove("menu-open");
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.width = "";
-    document.body.style.paddingRight = "";
-
-    window.scrollTo(0, scrollY);
-  };
-
-  const openMenu = () => {
     if (isMenuOpen) return;
 
-    lockScroll();
+    scrollY = window.scrollY || window.pageYOffset;
+
+    document.body.classList.add("menu-open");
+    page.style.top = `-${scrollY}px`;
+
     mobileMenu.hidden = false;
     burger.classList.add("is-active");
     burger.setAttribute("aria-expanded", "true");
+
     isMenuOpen = true;
   };
 
@@ -61,19 +42,20 @@ if (burger && mobileMenu) {
     mobileMenu.hidden = true;
     burger.classList.remove("is-active");
     burger.setAttribute("aria-expanded", "false");
-    isMenuOpen = false;
 
-    unlockScroll();
+    document.body.classList.remove("menu-open");
+    page.style.top = "";
+
+    window.scrollTo(0, scrollY);
+
+    isMenuOpen = false;
   };
 
   const toggleMenu = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
     if (isMenuOpen) {
       closeMenu();
     } else {
-      openMenu();
+      openMenu(e);
     }
   };
 
@@ -88,10 +70,10 @@ if (burger && mobileMenu) {
   document.addEventListener("click", (e) => {
     if (!isMenuOpen) return;
 
-    const clickedInsideMenu = mobileMenu.contains(e.target);
     const clickedBurger = burger.contains(e.target);
+    const clickedInsideMenu = mobileMenu.contains(e.target);
 
-    if (!clickedInsideMenu && !clickedBurger) {
+    if (!clickedBurger && !clickedInsideMenu) {
       closeMenu();
     }
   });
