@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Terracota Mérida — Lucía Marchesi Zorzi</title>
+  <meta name="description" content="Terracota Mérida: a multifunctional ritual ceramic object. Heat, light and food integrated into a single system to transform everyday actions into moments of calm." />
+  <meta name="author" content="Lucía Marchesi Zorzi" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://luciamarchesizorzi.com/projects/terracota-merida.html" />
 
   <link rel="stylesheet" href="../styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Sofia+Sans:wght@400;600&display=swap" rel="stylesheet" />
@@ -13,20 +17,60 @@
 <body>
 
 <!-- HEADER -->
-<header class="header">
-  <div class="container header__inner">
-    <a class="brand" href="../index.html">
-      <span class="brand__mark">LMZ</span>
-    </a>
+ <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="../index.html" aria-label="Home">
+        <span class="brand__mark">LMZ</span>
+      </a>
 
-    <nav class="nav">
-      <a class="nav__link" href="../index.html#work">Work</a>
-      <a class="nav__link is-active" href="../practice.html">Practice</a>
-      <a class="nav__link" href="../index.html#about">About</a>
-      <a class="nav__link" href="../contact.html">Contact</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="../index.html#work" data-i18n="nav_work">Work</a>
+        <a class="nav__link" href="../practice.html" data-i18n="nav_practice">Practice</a>
+        <a class="nav__link" href="../about.html" data-i18n="nav_about">About</a>
+        <a class="nav__link" href="../contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="header__right">
+        <div class="lang" aria-label="Language toggle">
+          <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
+          <span class="lang__sep">|</span>
+          <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+        </div>
+
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="header__rule" aria-hidden="true"></div>
+  </header>
+
+  <div id="mobileMenu" class="mobileMenu" hidden>
+    <nav class="mobileMenu__nav" aria-label="Mobile">
+      <a class="mobileMenu__link" href="../index.html#work" data-i18n="nav_work">Work</a>
+      <a class="mobileMenu__link" href="../practice.html" data-i18n="nav_practice">Practice</a>
+      <a class="mobileMenu__link" href="../about.html" data-i18n="nav_about">About</a>
+      <a class="mobileMenu__link" href="../contact.html" data-i18n="nav_contact">Contact</a>
     </nav>
   </div>
-</header>
+
+  <main id="top">
+    <section class="case-media">
+      <div class="container">
+        <div class="case-image">
+          <img
+            class="case-image__img"
+            src="../images/candela/CANDELA_RENDER_BIBLIOTECA.png"
+            alt="Candela table lamp in a library setting"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
 
 <main id="top">
 
@@ -130,12 +174,36 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="footer footer--full">
-  <div class="container footer__inner">
-    <p>© Lucía Marchesi Zorzi</p>
-  </div>
-</footer>
+    <section class="case-section">
+      <div class="container">
+        <a class="btn btn--ghost" href="../index.html#work">← Back to projects</a>
+      </div>
+    </section>
+  </main>
 
-<script src="../script.js"></script>
+  <footer class="footer footer--full">
+    <div class="footer__cta-band">
+      <div class="container">
+        <p class="footer__cta-text">
+          <span data-i18n="footer_cta">Open to new projects —</span>
+          <a class="footer__cta-link" href="../contact.html" data-i18n="footer_cta_link">Let's talk</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__main">
+      <div class="container footer__inner">
+        <p class="footer__copy">© <span id="year"></span> Lucía Marchesi Zorzi</p>
+        <div class="footer__links">
+          <a class="footer__link" href="mailto:luciamarchesi0@gmail.com">Email</a>
+          <a class="footer__link" href="https://www.linkedin.com/in/l-marchesi/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="footer__link" href="https://www.instagram.com/lumarchesi.di/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+        <a class="footer__top" href="#top" data-i18n="footer_back">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>
