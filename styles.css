@@ -1078,7 +1078,7 @@ img{ max-width: 100%; display:block; }
   }
 }
 
-/* ===== MOBILE MENU (Full Screen) ===== */
+/* ===== MOBILE MENU (Full Screen with Sticky Header) ===== */
 .burger{
   display: none;
   flex-direction: column;
@@ -1089,7 +1089,7 @@ img{ max-width: 100%; display:block; }
   cursor: pointer;
   width: 24px;
   height: 24px;
-  z-index: 11;
+  z-index: 13;
   position: relative;
 }
  
@@ -1122,7 +1122,7 @@ img{ max-width: 100%; display:block; }
   right: 0;
   bottom: 0;
   background: var(--bg);
-  z-index: 10;
+  z-index: 11;
   padding: var(--header-h) 0 0 0;
   overflow-y: auto;
   animation: slideDown .3s ease;
@@ -1186,12 +1186,17 @@ img{ max-width: 100%; display:block; }
     align-items: center;
     gap: 20px;
   }
- 
+  
+  /* Header stays sticky and always visible on top */
   .header{
+    position: sticky;
+    top: 0;
     z-index: 12;
-    position: relative;
+    background: rgba(246,244,241,.92);
+    backdrop-filter: blur(8px);
   }
 }
+ 
  
 /* ==============================================
    NEW: Footer redesign
