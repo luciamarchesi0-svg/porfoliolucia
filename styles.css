@@ -2072,3 +2072,51 @@ html, body, a, button, .btn, .nav__link, .lang__btn, .projectCard {
   right:0;
   background: linear-gradient(to left, var(--bg), transparent);
 }
+
+/* =========================
+   COMPOSITE MATERIALS PAGE
+   ========================= */
+
+.practice-detail--composites .practice-detail__intro,
+.practice-detail--composites .practice-detail__caption{
+  max-width: 880px;
+}
+
+.composites-gallery-section{
+  padding-top: 8px;
+}
+
+.composites-gallery{
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.composites-gallery__item{
+  break-inside: avoid;
+  margin: 0 0 20px;
+}
+
+.composites-gallery__item img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .35s ease;
+}
+
+.composites-gallery__item img:hover{
+  transform: scale(1.015);
+  opacity: .96;
+}
+
+@media (max-width: 1000px){
+  .composites-gallery{
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px){
+  .composites-gallery{
+    column-count: 1;
+  }
+}
