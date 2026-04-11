@@ -16,12 +16,15 @@ if (burger && mobileMenu) {
   burger.addEventListener("click", (e) => {
     e.stopPropagation();
     const isHidden = mobileMenu.hasAttribute("hidden");
+    
     if (isHidden) {
+      // Open menu
       mobileMenu.removeAttribute("hidden");
       burger.classList.add("is-active");
       burger.setAttribute("aria-expanded", "true");
       document.body.style.overflow = "hidden";
     } else {
+      // Close menu
       mobileMenu.setAttribute("hidden", "");
       burger.classList.remove("is-active");
       burger.setAttribute("aria-expanded", "false");
@@ -31,31 +34,15 @@ if (burger && mobileMenu) {
  
   // Close menu when a link is clicked
   mobileLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      // Only close if it's NOT an anchor to the current page
-      const href = link.getAttribute("href");
-      if (!href.startsWith("#")) {
-        mobileMenu.setAttribute("hidden", "");
-        burger.classList.remove("is-active");
-        burger.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      }
+    link.addEventListener("click", () => {
+      mobileMenu.setAttribute("hidden", "");
+      burger.classList.remove("is-active");
+      burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
     });
   });
  
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
-      if (!mobileMenu.hasAttribute("hidden")) {
-        mobileMenu.setAttribute("hidden", "");
-        burger.classList.remove("is-active");
-        burger.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      }
-    }
-  });
- 
-  // Close menu on ESC key
+  // Close menu when pressing ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !mobileMenu.hasAttribute("hidden")) {
       mobileMenu.setAttribute("hidden", "");
@@ -65,6 +52,7 @@ if (burger && mobileMenu) {
     }
   });
 }
+ 
  
 // ====== Active nav link on scroll (index only) ======
 const sections = ["work", "practice", "about", "contact"]
