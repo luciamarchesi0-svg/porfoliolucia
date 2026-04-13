@@ -2180,19 +2180,17 @@ html, body, a, button, .btn, .nav__link, .lang__btn, .projectCard {
   }
 }
 
-body {
-  margin: 0;
+body{
+  margin:0;
   font-family: var(--font-body);
   font-size: var(--body);
   line-height: 1.55;
-  background-color: var(--bg);
-  color: var(--ink);
-  
-  /* Puntos sutiles estilo bullet journal */
+  background-color: var(--bg);  /* ← Cambiado a background-COLOR */
   background-image: radial-gradient(
     circle, 
     rgba(30, 30, 30, 0.04) 0.9px, 
     transparent 0.9px
   );
   background-size: 22px 22px;
+  color: var(--ink);
 }
