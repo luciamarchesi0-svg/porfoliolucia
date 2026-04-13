@@ -1438,6 +1438,32 @@ body.menu-open{
   border-color: var(--ink);
 }
 
+/* ===== ABOUT — HOW I WORK ===== */
+
+.about-method{
+  padding-top: 120px;
+}
+
+.aboutMethod__content{
+  max-width: 720px;
+}
+
+.aboutMethod__text{
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.aboutMethod__closing{
+  font-family: var(--font-title);
+  font-size: 22px;
+  line-height: 1.4;
+  margin-top: 32px;
+  color: var(--ink);
+}
+
 /* Timeline */
 .about-timeline{
   padding: 64px 0;
