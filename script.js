@@ -198,6 +198,15 @@ const dict = {
     about_tool_8: "Composites",
     about_tool_9: "Goldsmithing",
 
+    // ABOUT — METHOD
+    about_method_title: "How I work & what sets me apart",
+    about_method_p1: "I approach design as a decision-making process, not a purely formal exercise. I start by understanding context, identifying real tensions, and clearly defining the problem.",
+    about_method_p2: "I don’t design isolated objects, but coherent systems where use, production, and meaning follow a clear logic.",
+    about_method_p3: "My approach combines research, strategic thinking, and material exploration. I care as much about the why as the how: identifying opportunities and translating them into viable, manufacturable, and consistent solutions.",
+    about_method_p4: "What sets me apart is synthesis. Reducing the unnecessary, clarifying what matters, and turning it into products that work well, are easy to understand, and integrate naturally into everyday life.",
+    about_method_p5: "I aim for a balance between intuition and technical reasoning, between aesthetic sensitivity and production logic.",
+    about_method_closing: "I don’t design to impose form, but to build meaning.",
+    
     about_timeline_title: "JOURNEY",
     about_tl_1_year: "2018",
     about_tl_1_text: "Started Industrial Design degree",
@@ -306,6 +315,14 @@ const dict = {
     about_tool_7: "Impresión 3D",
     about_tool_8: "Compuestos",
     about_tool_9: "Orfebrería",
+
+    about_method_title: "Cómo trabajo y qué me diferencia",
+    about_method_p1: "Trabajo el diseño como un proceso de toma de decisiones, no como un ejercicio formal. Empiezo entendiendo el contexto, detectando tensiones reales y definiendo con precisión el problema.",
+    about_method_p2: "No diseño objetos aislados, sino sistemas coherentes, donde uso, producción y significado responden a una misma lógica.",
+    about_method_p3: "Mi enfoque combina investigación, pensamiento estratégico y exploración material. Me interesa tanto el por qué como el cómo: identificar oportunidades y traducirlas en soluciones viables, fabricables y consistentes en el tiempo.",
+    about_method_p4: "Me diferencio por la síntesis. Reducir lo innecesario, clarificar lo esencial y convertirlo en productos que funcionan bien, se entienden rápido y se integran de forma natural.",
+    about_method_p5: "Busco equilibrio entre intuición y criterio técnico, entre sensibilidad estética y lógica productiva.",
+    about_method_closing: "No diseño para imponer una forma, sino para construir sentido.",
 
     about_timeline_title: "RECORRIDO",
     about_tl_1_year: "2018",
