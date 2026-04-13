@@ -13,29 +13,46 @@
 
 <body>
   <!-- HEADER -->
- <header class="header">
-  <div class="container header__inner">
-    <a class="brand" href="#top" aria-label="Home">
-      <span class="brand__mark">LMZ</span>
-    </a>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand__mark">LMZ</span>
+      </a>
 
-    <nav class="nav" aria-label="Primary">
-      <a class="nav__link" href="#work">Work</a>
-      <a class="nav__link" href="#practice">Practice</a>
-      <a class="nav__link" href="#about">About</a>
-      <a class="nav__link" href="contact.html" data-i18n="nav_contact">Contact</a>
-    </nav>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="#work" data-i18n="nav_work">Work</a>
+        <a class="nav__link" href="#practice" data-i18n="nav_practice">Practice</a>
+        <a class="nav__link" href="#about" data-i18n="nav_about">About</a>
+        <a class="nav__link" href="contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
 
-    <div class="lang" aria-label="Language toggle">
-      <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
-      <span class="lang__sep">|</span>
-      <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+      <div class="header__right">
+        <div class="lang" aria-label="Language toggle">
+          <button class="lang__btn is-active" type="button" data-lang-btn="en">EN</button>
+          <span class="lang__sep">|</span>
+          <button class="lang__btn" type="button" data-lang-btn="es">ES</button>
+        </div>
+
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="header__rule" aria-hidden="true"></div>
-</header>
+    <div class="header__rule" aria-hidden="true"></div>
+  </header>
 
-  <main id="top">
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="mobileMenu" hidden>
+    <nav class="mobileMenu__nav" aria-label="Mobile">
+      <a class="mobileMenu__link" href="#work" data-i18n="nav_work">Work</a>
+      <a class="mobileMenu__link" href="#practice" data-i18n="nav_practice">Practice</a>
+      <a class="mobileMenu__link" href="#about" data-i18n="nav_about">About</a>
+      <a class="mobileMenu__link" href="contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+  </div>
+
  
 <!-- WORK -->
 <section id="work" class="section work">
