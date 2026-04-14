@@ -1,0 +1,1 @@
+$c = Get-Content styles.css -Raw; $c = $c -replace "(?s)\.mobileMenu__link\{.*?\}", ".mobileMenu__link{display:block;width:100%;padding:20px 0;text-decoration:none;color:rgba(30,30,30,0.95);font-family:var(--font-body);font-size:var(--nav);text-align:center;letter-spacing:.02em;}"; Set-Content styles.css $c

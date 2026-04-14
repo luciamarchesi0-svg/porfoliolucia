@@ -12,7 +12,7 @@ const mobileMenu = document.getElementById("mobileMenu");
 const mobileLinks = document.querySelectorAll(".mobileMenu__link");
 const page = document.querySelector(".page");
 
-if (burger && mobileMenu && page) {
+if (burger && mobileMenu) {
   let scrollY = 0;
   let isMenuOpen = false;
 
@@ -27,7 +27,7 @@ if (burger && mobileMenu && page) {
     scrollY = window.scrollY || window.pageYOffset;
 
     document.body.classList.add("menu-open");
-    page.style.top = `-${scrollY}px`;
+    if (page) page.style.top = `-${scrollY}px`;
 
     mobileMenu.hidden = false;
     burger.classList.add("is-active");
@@ -44,7 +44,7 @@ if (burger && mobileMenu && page) {
     burger.setAttribute("aria-expanded", "false");
 
     document.body.classList.remove("menu-open");
-    page.style.top = "";
+    if (page) page.style.top = "";
 
     window.scrollTo(0, scrollY);
 
