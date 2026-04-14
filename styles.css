@@ -965,10 +965,11 @@ img{ max-width: 100%; display:block; }
   margin: 0;
   font-family: var(--font-title);
   font-weight: 700;
-  font-size: clamp(56px, 6.2vw, 104px);
+  font-size: clamp(44px, 10vw, 104px);
   line-height: 1.02;
   letter-spacing: -0.03em;
   color: rgba(30,30,30,.92);
+  word-break: break-word;
 }
 
 .contactPage__desc{
@@ -1024,6 +1025,7 @@ img{ max-width: 100%; display:block; }
   color: rgba(30,30,30,.92);
   font-size: 19px;
   line-height: 1.45;
+  word-break: break-word;
 }
 
 .contactPage__link{
@@ -1037,10 +1039,16 @@ img{ max-width: 100%; display:block; }
 }
 
 @media (max-width: 900px){
-  .contactPage{ padding: 96px 0; }
+  .contactPage{ padding: 96px 0 64px; }
   .contactPage__grid{ grid-template-columns: 1fr; gap: 54px; }
-  .contactPage__desc{ max-width: 60ch; }
+  .contactPage__desc{ max-width: 100%; }
+}
 
+@media (max-width: 600px){
+  .contactPage{ padding: 64px 0 48px; }
+  .contactPage__grid{ gap: 40px; }
+  .contactPage__item{ padding: 12px 0 16px; }
+  .contactPage__value{ font-size: 16px; }
 }
 /* ===== ABOUT refined layout (force) ===== */
 .aboutGrid{
